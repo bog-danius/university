@@ -23,7 +23,7 @@
 ## Summary
 > Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad adipisci animi blanditiis dicta dolores eum eveniet expedita modi, natus nihil omnis perferendis possimus praesentium quam recusandae sint sunt ut voluptatem.
 
-![Your Photo](img/photo_2025-02-20_16-11-06.jpg)
+![Your Photo](./photo_2025-02-26_12-50-38.jpg)
 
 ---
 
