@@ -56,7 +56,7 @@ a {
     text-decoration: none;
 }
 
-a:visited {
+.nav-link:visited {
     color: #FFFFFF;
 }
 
@@ -167,11 +167,6 @@ a:visited {
     line-height: 28px;
 }
 
-.btn-secondary-icon {
-    width: 32px;
-    height: 32px;
-}
-
 .countdown {
 }
 
@@ -196,7 +191,7 @@ a:visited {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: 240px 0;
+    padding: 100px 0 270px 0;
     gap: 60px
 
 }
@@ -322,7 +317,7 @@ a:visited {
 .about-text {
     display: flex;
     flex-direction: column;
-    gap: 60px;
+    gap: 80px;
     align-items: flex-start;
 }
 
@@ -431,7 +426,7 @@ a:visited {
 }
 
 .btn-singer {
-    display: inline-block; /* Это позволяет кнопке занимать только нужное пространство */
+    display: inline-block;
     padding: 18px 34px;
     border-radius: 8px;
     background: #381DDB;
@@ -722,7 +717,8 @@ a:visited {
     display: block;
     margin: 0 auto;
 }
-.btn-sponsors{
+
+.btn-sponsors {
     display: inline-flex;
     padding: 18px 34px;
     align-items: center;
@@ -738,40 +734,239 @@ a:visited {
     font-style: normal;
     font-weight: 700;
     line-height: normal;
-    margin: 0 auto; /* Центрируем кнопку */
+    margin: 0 auto;
 }
 
 .testimonials {
+    display: flex;
+    gap: 61px;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 240px;
+    margin-bottom: 100px;
 }
 
 .testimonials-title {
+    color: #222;
+    text-align: center;
+
+    font-family: Montserrat, serif;
+    font-size: 34px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 130%;
 }
 
-.testimonial {
+.testimonials-list {
+
+    display: flex;
+    gap: 30px;
+
+}
+
+.testimonial-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+
+
+}
+
+.testimonial-card-stats {
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    background-color: rgba(34, 34, 34, 0.03);
+    padding: 20px 60px 115px 60px;
 }
 
 .testimonial-text {
+    color: #222;
+    text-align: center;
+    font-feature-settings: 'liga' off, 'clig' off;
+    width: 650px; /*но это не правильно.... что бы блоки выходили за приделы экрана :(*/
+    font-family: Raleway, serif;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 24px;
+    opacity: 0.7;
+}
+
+.quotes-close {
+    margin-left: auto;
 }
 
 .testimonial-author {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    position: relative;
+    top: -85px;
 }
 
 .author-img {
 }
 
+.testimonial-author-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+
 .author-name {
+    color: #222;
+    text-align: center;
+    font-feature-settings: 'liga' off, 'clig' off;
+
+    font-family: Montserrat, serif;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 800;
+    line-height: 28px;
 }
 
 .author-link {
+    color: #381DDB;
+    text-align: center;
+    font-feature-settings: 'liga' off, 'clig' off;
+
+    font-family: Raleway, serif;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 24px;
 }
 
 .best-shots {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 60px;
+    margin-bottom: 240px;
+    background: linear-gradient(180deg, rgba(252, 82, 82, 0.05) 0%, rgba(252, 82, 82, 0.00) 100%);
+}
+
+.best-shots-content {
+    display: flex;
+    width: 100%;
+    max-width: 1140px;
+    padding: 160px 0 60px 0;
 }
 
 .best-shots-title {
+    color: #222;
+    font-family: Montserrat, serif;
+    font-size: 34px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 130%;
+
+}
+
+.best-shots-slider {
+    position: relative;
+}
+
+.btn-best-shots1 {
+    position: absolute;
+    border-radius: 50%;
+    left: 760px;
+    bottom: -270px;
+    z-index: 1;
+    width: 56px;
+    aspect-ratio: 1/1;
+}
+
+.btn-best-shots2 {
+    position: absolute;
+    border-radius: 50%;
+    right: 760px;
+    bottom: -270px;
+    z-index: 1;
+    width: 56px;
+    aspect-ratio: 1/1;
 }
 
 .best-shots-gallery {
+    display: flex;
+    gap: 30px;
+}
+
+.best-shots-card {
+    display: inline-block;
+    flex-direction: column;
+    gap: 24px;
+    position: relative;
+}
+
+.best-shots-card-img {
+}
+
+.best-shots-card-info {
+    color: #222;
+    text-align: right;
+    font-feature-settings: 'liga' off, 'clig' off;
+
+    font-family: Montserrat, serif;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.best-shots-card-info-like {
+    display: flex;
+    gap: 40px;
+}
+
+.best-shots-card-info-like-info {
+    display: flex;
+    gap: 8px;
+
+}
+
+.best-shots-card-info-text {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+
+}
+
+.best-shots-card-info-text-logo {
+    color: #222;
+    font-feature-settings: 'liga' off, 'clig' off;
+
+    font-family: Raleway, serif;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 24px;
+    text-align: left;
+}
+
+.best-shots-card-info-text-hashtag {
+    color: #222;
+    font-feature-settings: 'liga' off, 'clig' off;
+
+    font-family: Raleway, serif;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 24px;
+    opacity: 0.5;
+    text-align: left;
 }
 
 .contact-us {
@@ -789,8 +984,6 @@ a:visited {
 
 .contact-info-title {
     color: #FFF;
-
-    /* /H2 */
     font-family: Montserrat, serif;
     font-size: 34px;
     font-style: normal;
@@ -822,6 +1015,9 @@ a:visited {
     font-style: normal;
     font-weight: 700;
     line-height: normal;
+    display: flex;
+    align-items: center;
+    gap: 4px;
 }
 
 .contact-form {
@@ -829,14 +1025,12 @@ a:visited {
     flex-direction: column;
     align-items: flex-start;
     gap: 40px;
-    padding: 103px 375px 103px 130px;
+    padding: 103px 0 103px 130px;
 }
 
 .contact-form-title {
     color: #222;
     font-feature-settings: 'liga' off, 'clig' off;
-
-
     font-family: Montserrat, serif;
     font-size: 24px;
     font-style: normal;
@@ -861,16 +1055,17 @@ a:visited {
     line-height: 18px;
     transition: color 0.3s;
 }
+
 .form-input:focus {
     outline: none;
     border-bottom: 2px solid #381DDB;
 }
 
-/* Когда элемент в фокусе или его родительский контейнер в фокусе, меняем цвет label */
+/* Когда элемент в фокусе или его родительский контейнер в фокусе, меняем цвет label
 .form-label + .form-input:focus{
-    color: #381DDB; /* Синий цвет для текста label */
-}
-.btn-contact{
+    color: #381DDB; /* Синий цвет для текста label
+}*/
+.btn-contact {
     display: flex;
     padding: 18px 34px;
     justify-content: center;
@@ -888,6 +1083,7 @@ a:visited {
     font-weight: 700;
     line-height: normal;
 }
+
 .form-input {
     color: #222;
     font-feature-settings: 'liga' off, 'clig' off;
@@ -903,10 +1099,12 @@ a:visited {
     min-height: 40px;
     margin-bottom: 30px;
 }
+
 .form-input:focus {
     outline: none;
     border-bottom: 2px solid #381DDB;
 }
+
 textarea.form-input {
     min-height: 100px;
 }
@@ -960,7 +1158,6 @@ textarea.form-input {
 .footer-link {
     color: #FFF;
 
-    /* Menu */
     font-family: Montserrat, serif;
     font-size: 14px;
     font-style: normal;
