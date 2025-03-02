@@ -191,61 +191,143 @@
 
 
     <section class="schedule">
-        <p class="schedule-title">Event Schedule</p>
-        <div class="tabs">
-            <div class="tab" data-day="day1">Day 01</div>
-            <div class="tab" data-day="day2">Day 02</div>
-            <div class="tab" data-day="day3">Day 03</div>
-        </div>
-        <div id="day1" class="schedule">
-            <div class="event">
-                <p class="event-time">11:00 AM - 12:00 PM</p>
-                <p class="event-description">Vestibulum vel eros vel metus lacinia feugiat a nec metus.</p>
-                <span class="preview">Preview</span>
+        <div class="schedule-title-content">
+            <p class="schedule-title">Event Schedule</p>
+
+            <div class="tabs">
+                <div class="tab active" data-day="day1">
+                    <p class="tab-day">Day 01</p>
+                    <p class="tab-day-month">16 August</p>
+                </div>
+                <div class="tab" data-day="day2">
+                    <p class="tab-day">Day 02</p>
+                    <p class="tab-day-month">17 August</p>
+                </div>
+                <div class="tab" data-day="day3">
+                    <p class="tab-day">Day 03</p>
+                    <p class="tab-day-month">18 August</p>
+                </div>
             </div>
-            <div class="event">
-                <p class="event-time">12:00 PM - 03:00 PM</p>
-                <p class="event-description">Duis nec sodales nibh...</p>
-                <span class="live">Live 🔴</span>
-            </div>
-            <div class="event">
-                <p class="event-time">03:00 PM - 04:00 PM</p>
-                <p class="event-description">Vestibulum vel eros vel metus lacinia feugiat a nec metus.</p>
-                <span class="preview">Upcoming</span>
-            </div>
-        </div>
-        <div id="day2" class="schedule">
-            <div class="event">
-                <p class="event-time">11:00 AM - 12:00 PM</p>
-                <p class="event-description">Vestibulum vel eros vel metus lacinia feugiat a nec metus.</p>
-                <span class="preview">Preview</span>
-            </div>
-            <div class="event">
-                <p class="event-time">12:00 PM - 03:00 PM</p>
-                <p class="event-description">Duis nec sodales nibh...</p>
-                <span class="live">Live 🔴</span>
-            </div>
-            <div class="event">
-                <p class="event-time">03:00 PM - 04:00 PM</p>
-                <p class="event-description">Vestibulum vel eros vel metus lacinia feugiat a nec metus.</p>
-                <span class="preview">Upcoming</span>
-            </div>
-        </div>
-        <div id="day3" class="schedule">
-            <div class="event">
-                <p class="event-time">11:00 AM - 12:00 PM</p>
-                <p class="event-description">Vestibulum vel eros vel metus lacinia feugiat a nec metus.</p>
-                <span class="preview">Preview</span>
-            </div>
-            <div class="event">
-                <p class="event-time">12:00 PM - 03:00 PM</p>
-                <p class="event-description">Duis nec sodales nibh...</p>
-                <span class="live">Live 🔴</span>
-            </div>
-            <div class="event">
-                <p class="event-time">03:00 PM - 04:00 PM</p>
-                <p class="event-description">Vestibulum vel eros vel metus lacinia feugiat a nec metus.</p>
-                <span class="preview">Upcoming</span>
+
+            <div id="day1" class="schedule-info">
+                <div class="schedule-header">
+                    <p class="header-info" style="width: 153px">Time</p>
+                    <p class="header-info" style="width: 370px">Content</p>
+                    <p class="header-info" style="width: 270px">Speakers</p>
+                </div>
+                <div class="event">
+                    <p class="event-time">11:00 AM to 12:00 PM</p>
+                    <p class="event-description">Vestibulum vel eros vel metus lacinia feugiat a nec metus.</p>
+                    <div class="event-speakers">
+                        <div class="speaker">
+                            <img src="./assert/img/speaker1.svg" alt="speaker-img">
+                            <div class="speaker-info">
+                                <p class="event-speakers-name">Yui Ronald</p>
+                                <p class="event-speakers-booth">Booth: <span
+                                        class="event-speakers-booth-code">2F12</span></p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <span class="preview" style="margin-left: 130px">
+                        Preview
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                      <g clip-path="url(#clip0_893_283)">
+                        <path d="M12 21.9999C6.477 21.9999 2 17.5229 2 11.9999C2 6.47688 6.477 1.99988 12 1.99988C17.523 1.99988 22 6.47688 22 11.9999C22 17.5229 17.523 21.9999 12 21.9999ZM12 19.9999C14.1217 19.9999 16.1566 19.157 17.6569 17.6567C19.1571 16.1564 20 14.1216 20 11.9999C20 9.87815 19.1571 7.84331 17.6569 6.34302C16.1566 4.84273 14.1217 3.99988 12 3.99988C9.87827 3.99988 7.84344 4.84273 6.34315 6.34302C4.84285 7.84331 4 9.87815 4 11.9999C4 14.1216 4.84285 16.1564 6.34315 17.6567C7.84344 19.157 9.87827 19.9999 12 19.9999ZM10.622 8.41488L15.501 11.6669C15.5559 11.7034 15.6009 11.7529 15.632 11.811C15.6631 11.8691 15.6794 11.934 15.6794 11.9999C15.6794 12.0658 15.6631 12.1307 15.632 12.1888C15.6009 12.2469 15.5559 12.2964 15.501 12.3329L10.621 15.5849C10.5608 15.6248 10.491 15.6476 10.4189 15.651C10.3468 15.6544 10.2751 15.6383 10.2114 15.6042C10.1477 15.5702 10.0945 15.5196 10.0573 15.4577C10.02 15.3958 10.0003 15.3251 10 15.2529V8.74688C10.0001 8.67453 10.0199 8.60357 10.0572 8.54156C10.0944 8.47955 10.1478 8.42881 10.2116 8.39474C10.2755 8.36067 10.3473 8.34455 10.4196 8.3481C10.4919 8.35164 10.5618 8.37472 10.622 8.41488Z"
+                              fill="#222222"/>
+                      </g>
+                      <defs>
+                        <clipPath id="clip0_893_283">
+                          <rect width="24" height="24" fill="white"/>
+                        </clipPath>
+                      </defs>
+                    </svg></span>
+                </div>
+                <hr class="hr">
+                <div class="event">
+                    <p class="event-time">12:00 PM to 03:00 PM</p>
+                    <p class="event-description">Duis nec sodales nibh. Proin lectus tortor, rutrum vel vulputate vitae,
+                        fringilla id magna. Vestibulum ornare eget urna nec pulvinar. Praesent porttitor convallis
+                        blandit. Fusce vel egestas dolor. Donec eu augue enim. Donec rutrum non lacus ac rhoncus. Morbi
+                        quis luctus leo, nec cursus ex.</p>
+                    <div class="event-speakers">
+                        <div class="speaker">
+                            <img src="./assert/img/speaker2.svg" alt="speaker-img">
+                            <div class="speaker-info">
+                                <p class="event-speakers-name">Bob John</p>
+                                <p class="event-speakers-booth">Booth: <span
+                                        class="event-speakers-booth-code">3G12</span></p>
+                            </div>
+                        </div>
+                        <div class="speaker">
+                            <img src="./assert/img/speaker3.svg" alt="speaker-img">
+                            <div class="speaker-info">
+                                <p class="event-speakers-name">Yui Ronald</p>
+                                <p class="event-speakers-booth">Booth: <span
+                                        class="event-speakers-booth-code">2F12</span></p>
+                            </div>
+                        </div>
+                        <div class="speaker">
+                            <img src="./assert/img/speaker4.svg" alt="speaker-img">
+                            <div class="speaker-info">
+                                <p class="event-speakers-name">Emma Satoshi</p>
+                                <p class="event-speakers-booth">Booth: <span
+                                        class="event-speakers-booth-code">2A35</span></p>
+                            </div>
+                        </div>
+                    </div>
+                    <span class="preview live">
+                        Live
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                          <g clip-path="url(#clip0_893_307)">
+                            <path d="M16 4C16.2652 4 16.5196 4.10536 16.7071 4.29289C16.8946 4.48043 17 4.73478 17 5V9.2L22.213 5.55C22.288 5.49746 22.3759 5.4665 22.4672 5.4605C22.5586 5.4545 22.6498 5.4737 22.731 5.51599C22.8122 5.55829 22.8802 5.62206 22.9276 5.70035C22.9751 5.77865 23.0001 5.86846 23 5.96V18.04C23.0001 18.1315 22.9751 18.2214 22.9276 18.2996C22.8802 18.3779 22.8122 18.4417 22.731 18.484C22.6498 18.5263 22.5586 18.5455 22.4672 18.5395C22.3759 18.5335 22.288 18.5025 22.213 18.45L17 14.8V19C17 19.2652 16.8946 19.5196 16.7071 19.7071C16.5196 19.8946 16.2652 20 16 20H2C1.73478 20 1.48043 19.8946 1.29289 19.7071C1.10536 19.5196 1 19.2652 1 19V5C1 4.73478 1.10536 4.48043 1.29289 4.29289C1.48043 4.10536 1.73478 4 2 4H16ZM15 6H3V18H15V6ZM7.4 8.829C7.47611 8.82879 7.55069 8.8503 7.615 8.891L11.97 11.663C12.0266 11.6992 12.0731 11.749 12.1054 11.8079C12.1376 11.8668 12.1545 11.9329 12.1545 12C12.1545 12.0671 12.1376 12.1332 12.1054 12.1921C12.0731 12.251 12.0266 12.3008 11.97 12.337L7.615 15.11C7.55434 15.1487 7.48438 15.1703 7.41248 15.1725C7.34059 15.1748 7.26941 15.1576 7.20646 15.1228C7.14351 15.088 7.0911 15.0368 7.05477 14.9747C7.01844 14.9127 6.99951 14.8419 7 14.77V9.23C7 9.009 7.18 8.83 7.4 8.83V8.829ZM21 8.84L17 11.64V12.358L21 15.158V8.84Z"
+                                  fill="#FC5252"/>
+                          </g>
+                          <defs>
+                            <clipPath id="clip0_893_307">
+                              <rect width="24" height="24" fill="white"/>
+                            </clipPath>
+                          </defs>
+                        </svg>
+                    </span>
+                </div>
+                <hr class="hr">
+                <div class="event">
+                    <p class="event-time">03:00 PM to 04:00 PM</p>
+                    <p class="event-description">Vestibulum vel eros vel metus lacinia feugiat a nec metus.</p>
+                    <div class="event-speakers">
+                        <div class="speaker">
+                            <img src="./assert/img/speaker5.svg" alt="speaker-img">
+                            <div class="speaker-info">
+                                <p class="event-speakers-name">Sasha Jackson</p>
+                                <p class="event-speakers-booth">Booth: <span
+                                        class="event-speakers-booth-code">2F18</span></p>
+                            </div>
+                        </div>
+                        <div class="speaker">
+                            <img src="./assert/img/speaker6.svg" alt="speaker-img">
+                            <div class="speaker-info">
+                                <p class="event-speakers-name">Diana Brock</p>
+                                <p class="event-speakers-booth">Booth: <span
+                                        class="event-speakers-booth-code">2F24</span></p>
+                            </div>
+                        </div>
+                    </div>
+                    <span class="preview">
+                        Upcoming
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                          <g clip-path="url(#clip0_893_326)">
+                            <path d="M12 22C6.477 22 2 17.523 2 12C2 6.477 6.477 2 12 2C17.523 2 22 6.477 22 12C22 17.523 17.523 22 12 22ZM12 20C14.1217 20 16.1566 19.1571 17.6569 17.6569C19.1571 16.1566 20 14.1217 20 12C20 9.87827 19.1571 7.84344 17.6569 6.34315C16.1566 4.84285 14.1217 4 12 4C9.87827 4 7.84344 4.84285 6.34315 6.34315C4.84285 7.84344 4 9.87827 4 12C4 14.1217 4.84285 16.1566 6.34315 17.6569C7.84344 19.1571 9.87827 20 12 20ZM13 12H17V14H11V7H13V12Z"
+                                  fill="#222222"/>
+                          </g>
+                          <defs>
+                            <clipPath id="clip0_893_326">
+                              <rect width="24" height="24" fill="white"/>
+                            </clipPath>
+                          </defs>
+                        </svg>
+                    </span>
+                </div>
             </div>
         </div>
     </section>
@@ -545,6 +627,19 @@
                 }
             });
     }, 5000);*/
+
+    const tabs = document.querySelectorAll('.tab');
+
+    function switchTab(event) {
+        tabs.forEach(tab => {
+            tab.classList.remove('active');
+        });
+        event.currentTarget.classList.add('active');
+    }
+
+    tabs.forEach(tab => {
+        tab.addEventListener('click', switchTab);
+    });
 </script>
 
 <script src="assert/js/component-categories.js"></script>
