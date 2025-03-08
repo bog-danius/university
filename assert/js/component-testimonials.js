@@ -11,7 +11,7 @@ class ComponentTestimonials extends HTMLElement {
                 <div class="testimonial-card" style="opacity: ${opacity}">
                     <div class="testimonial-card-stats">
                         <img src="./assert/img/Quotes-open.svg" alt="quotes-open" class="quotes-open">
-                        <p class="testimonial-text">"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."</p>
+                        <p class="testimonial-text">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
                         <img src="./assert/img/Quotes-clothes.svg" alt="quotes-closes" class="quotes-close">
                     </div>
                     <div class="testimonial-author">
