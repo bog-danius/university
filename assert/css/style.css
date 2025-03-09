@@ -257,7 +257,7 @@ a {
     display: flex;
     flex-direction: column;
     gap: 34px;
-    padding: 90px 105px 36px 60px;
+    padding: 90px 115px 36px 50px;
 
     box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.2);
     transition: transform 0.3s ease, background 0.5s ease;
@@ -295,7 +295,7 @@ a {
     font-weight: 400;
     line-height: 24px;
     opacity: 0.7;
-    max-width: 190px;
+    max-width: 200px;
 }
 
 @keyframes slide {
@@ -578,7 +578,7 @@ a {
     margin-top: 360px;
     background: linear-gradient(180deg, rgba(56, 29, 219, 0.05) 0%, rgba(56, 29, 219, 0.00) 100%);
     padding-top: 180px;
-    margin-bottom: 233px;
+    margin-bottom: 234px;
 
 }
 
@@ -654,7 +654,7 @@ a {
 .schedule-header {
     display: flex;
     font-weight: bold;
-    padding: 40px;
+    padding: 39px;
     gap: 30px;
     background: rgba(56, 29, 219, 0.05);
 }
@@ -678,8 +678,7 @@ a {
 .event {
     display: flex;
     gap: 30px;
-    align-items: center;
-    margin: 40px 0 0 40px;
+    margin: 40px 0 0 39px;
 }
 
 .event-time {
@@ -691,7 +690,8 @@ a {
     font-style: normal;
     font-weight: 400;
     line-height: 24px;
-    max-width: 230px;
+    max-width: 300px;
+    white-space: nowrap;
 }
 
 .event-description {
@@ -703,7 +703,8 @@ a {
     font-style: normal;
     font-weight: 700;
     line-height: 24px;
-    max-width: 370px;
+    max-width: 440px;
+    padding-left: 75px;
 }
 
 .event-speakers {
@@ -711,6 +712,7 @@ a {
     gap: 32px;
     flex-direction: column;
     max-width: 270px;
+    padding-right: 5px;
 
 }
 
@@ -718,6 +720,8 @@ a {
     display: flex;
     gap: 10px;
     align-items: center;
+    white-space: nowrap;
+
 }
 
 .speaker-info {
@@ -773,7 +777,7 @@ a {
     justify-content: flex-end;
     align-items: center;
     gap: 8px;
-    margin-left: 100px;
+    margin-left: 35px;
     width: 180px;
 }
 
@@ -822,7 +826,7 @@ a {
     justify-content: center;
     align-items: center;
     gap: 30px;
-    padding: 23px 103px;
+    padding: 25px 103px;
     border-radius: 20px;
     background: #FFF;
     box-shadow: 0 20px 100px 0 rgba(34, 34, 34, 0.15);
