@@ -12,7 +12,7 @@ class ComponentBestshots extends HTMLElement {
         this.innerHTML = `
                 <div class="best-shots-card" style="opacity: ${opacity}">
                     <div class="best-shots-card-img">
-                        <img src="${img}" alt="bestshots">
+                        <img src="${img}" alt="bestshots" class="best-shots-card-img-photo">
                     </div>
                     <div class="best-shots-card-info">
                         <div class="best-shots-card-info-like">

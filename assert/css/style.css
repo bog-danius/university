@@ -20,7 +20,7 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-size: cover;
+    background-size: inherit;
     background-repeat: no-repeat;
     background-position: center top;
     background-image: url('../img/Img-fon.png');
@@ -91,6 +91,30 @@ a {
     line-height: normal;
     margin-left: 18px;
 
+}
+
+.burger-menu {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    z-index: 100;
+}
+
+.burger-checkbox {
+    display: none;
+}
+
+.burger-menu span {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background: white;
 }
 
 .main-content {
@@ -204,6 +228,7 @@ a {
     margin: 80px;
     opacity: 0.3;
     letter-spacing: 15px;
+    white-space: nowrap;
 }
 
 
@@ -247,7 +272,8 @@ a {
 .category-list-slider {
     display: flex;
     gap: 30px;
-    flex-wrap: nowrap;
+    flex-wrap: wrap;
+    justify-content: center;
 
 }
 
@@ -257,7 +283,7 @@ a {
     display: flex;
     flex-direction: column;
     gap: 34px;
-    padding: 90px 115px 36px 50px;
+    padding: 90px 100px 36px 50px;
 
     box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.2);
     transition: transform 0.3s ease, background 0.5s ease;
@@ -273,7 +299,7 @@ a {
 
 .component-list-slider-block-icon {
     width: 40px;
-    height: 40px;
+    aspect-ratio: 1/1;
 
 }
 
@@ -363,7 +389,6 @@ a {
 .about-description {
     color: #222;
     font-feature-settings: 'liga' off, 'clig' off;
-    width: 600px;
     font-family: Raleway, serif;
     font-size: 16px;
     font-style: normal;
@@ -470,8 +495,8 @@ a {
 
 .singer-images {
     display: grid;
-    grid-template-columns: 370px 270px;
-    grid-template-rows: 270px 300px;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-template-rows: auto;
     position: relative;
     width: fit-content;
 }
@@ -577,7 +602,7 @@ a {
     align-items: center;
     margin-top: 360px;
     background: linear-gradient(180deg, rgba(56, 29, 219, 0.05) 0%, rgba(56, 29, 219, 0.00) 100%);
-    padding-top: 180px;
+    padding-top: 150px;
     margin-bottom: 234px;
 
 }
@@ -818,6 +843,8 @@ a {
     gap: 30px;
     width: 100%;
     max-width: 1170px;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
 .component-sell-block {
@@ -972,10 +999,26 @@ a {
 }
 
 .testimonials-list {
+    width: 100vw;
 
+    margin: 0 auto;
     display: flex;
     gap: 30px;
+    overflow-x: auto;
+    justify-content: center;
+    scroll-snap-type: x mandatory;
+    padding-left: 500px;
+    scroll-padding-left: 500px;
+    scroll-snap-align: start;
+}
 
+.testimonials-list::-webkit-scrollbar {
+    height: 6px;
+}
+
+.testimonials-list::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 3px;
 }
 
 .testimonial-card {
@@ -984,7 +1027,7 @@ a {
     justify-content: center;
     align-items: center;
     gap: 30px;
-
+    scroll-snap-align: center;
 
 }
 
@@ -1000,7 +1043,7 @@ a {
     color: #222;
     text-align: center;
     font-feature-settings: 'liga' off, 'clig' off;
-    width: 650px; /*но это не правильно.... что бы блоки выходили за приделы экрана :(*/
+    width: 650px;
     font-family: Raleway, serif;
     font-size: 16px;
     font-style: normal;
@@ -1082,7 +1125,7 @@ a {
     display: flex;
     width: 100%;
     max-width: 1170px;
-    padding: 160px 0 0 0;
+    padding: 152px 0 0 0;
 }
 
 .best-shots-title {
@@ -1126,6 +1169,17 @@ a {
 .best-shots-gallery {
     display: flex;
     gap: 30px;
+    width: 100vw;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    scroll-snap-align: start;
+}
+
+.best-shots-gallery::-webkit-scrollbar {
+    height: 2px;
 }
 
 .best-shots-card {
@@ -1133,6 +1187,7 @@ a {
     flex-direction: column;
     gap: 24px;
     position: relative;
+    flex: 0 0 auto;
 }
 
 .best-shots-card-img {
@@ -1217,7 +1272,8 @@ a {
     font-size: 34px;
     font-style: normal;
     font-weight: 700;
-    line-height: 130%;    margin-bottom: 8px;
+    line-height: 130%;
+    margin-bottom: 8px;
 }
 
 .contact-info-description {

@@ -1,0 +1,167 @@
+@media (max-width: 320px) {
+    .header-container {
+        position: relative;
+        justify-content: flex-start;
+        padding-left: 20px;
+    }
+
+    .header-container {
+        position: relative;
+    }
+
+    .burger-checkbox {
+        display: none;
+    }
+
+    .burger-menu {
+        display: flex;
+        top: 38px;
+
+
+    }
+
+    .navbar {
+        display: none;
+        flex-direction: column;
+        align-items: center;
+        position: absolute;
+        top: 70px;
+        left: 0;
+        width: 101%;
+        background: rgba(0, 0, 0, 0.5);
+        padding: 20px 0;
+    }
+
+    .nav-list {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        width: 100%;
+        text-align: center;
+    }
+
+    .nav-link {
+        display: block;
+        padding: 10px;
+        color: white;
+    }
+
+    .burger-checkbox:checked ~ .navbar {
+        display: flex;
+    }
+
+    .hero {
+        margin-bottom: 0;
+        padding-bottom: 143px;
+    }
+
+    .hero-title {
+        font-size: 46px;
+    }
+
+    .hero-text {
+        font-size: 16px;
+    }
+
+    .countdown {
+        display: none;
+    }
+
+    .hero-buttons {
+        gap: 0;
+    }
+
+    .btn-primary {
+        padding: 0 8px;
+    }
+
+    .btn-secondary {
+        gap: 0;
+    }
+
+    .categories {
+        display: none;
+    }
+
+    .about {
+        margin-bottom: 0;
+    }
+
+    .about-content {
+        padding-left: 20px;
+    }
+
+    .about-image1 {
+        display: none;
+    }
+
+    .about-image2 {
+        display: none;
+    }
+
+    .btn-about {
+        width: 90%;
+        justify-content: center;
+    }
+
+    .btn-singer {
+        width: 90%;
+    }
+
+    .singer-images {
+        display: none;
+    }
+
+    .schedule {
+        padding-top: 0;
+        margin-top: 80px;
+        margin-bottom: 80px;
+    }
+
+    .component-sell-block {
+        padding: 25px 58px;
+    }
+
+    .sponsors {
+        margin-top: 80px;
+    }
+
+    .sponsors-list {
+        padding: 0 20px;
+    }
+
+    .btn-sponsors {
+        width: 90%;
+        justify-content: center;
+    }
+
+    .testimonials {
+        display: none;
+    }
+
+    .best-shots {
+        margin-bottom: 80px;
+    }
+
+    .best-shots-content {
+        padding-top: 80px;
+    }
+
+    .best-shots-card {
+        padding-left: 20px;
+    }
+
+    .btn-contact {
+        width: 97%;
+    }
+
+    .form-input {
+        max-width: 290px;
+    }
+
+    .footer-menu1 {
+        flex-direction: column;
+        align-items: baseline;
+    }
+
+}
