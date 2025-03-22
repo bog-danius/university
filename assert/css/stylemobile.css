@@ -89,14 +89,19 @@
 
     .about-content {
         padding-left: 20px;
+        flex-direction: column;
     }
 
     .about-image1 {
-        display: none;
+        width: 280px;
+        height: 280px;
     }
 
     .about-image2 {
-        display: none;
+        width: 280px;
+        height: 280px;
+        margin-left: 15px;
+        margin-top: -25px;
     }
 
     .btn-about {
@@ -108,8 +113,35 @@
         width: 90%;
     }
 
+    .singer-container {
+        width: 90%;
+        height: 90%;
+        box-shadow: 0 2px 2px 0 rgba(56, 29, 219, 0.01);
+    }
+
     .singer-images {
-        display: none;
+
+    }
+    .singer-container::before {
+        width: 135px;
+        height: 135px;
+        filter: blur(55px);
+    }
+    .singer-container1 {
+        transform: translateY(80px);
+    }
+
+    .singer-container2 {
+        transform: translatey(80px);
+    }
+
+    .singer-container3 {
+        transform: translateY(70px);
+    }
+
+    .singer-container4 {
+        transform: translateY(70px);
+        left: 0;
     }
 
     .schedule {
