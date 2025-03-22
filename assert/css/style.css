@@ -239,8 +239,30 @@ a {
     justify-content: center;
     align-items: center;
     margin-bottom: 295px;
-    gap: 60px
+    gap: 60px;
+    opacity: 0;
+    transform: translateY(40px) scale(0.8);
+    animation: fadeIn 1.2s ease-in forwards;
+    animation-timeline: view(); /* ignore */
+    animation-range:entry 0% cover 30% ;/* ignore */
+}
+     @media (prefers-reduced-motion: no-preference) {
+         .categories {
+             animation-timeline: view(); /* ignore */
+             animation-range: entry 0% cover 30%;
+         }
+     }
 
+
+@keyframes fadeIn {
+    form{
+        opacity: 0;
+        transform: translateY(40px) scale(0.8);
+    }
+    to{
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
 }
 
 .categories-content {
@@ -337,6 +359,17 @@ a {
     display: flex;
     justify-content: center;
     margin-bottom: 240px;
+    opacity: 0;
+    transform: translateY(40px) scale(0.8);
+    animation: fadeIn 1.2s ease-in forwards;
+    animation-timeline: view(); /* ignore */
+    animation-range:entry 0% cover 30% ;/* ignore */
+}
+@media (prefers-reduced-motion: no-preference) {
+    .about {
+        animation-timeline: view(); /* ignore */
+        animation-range: entry 0% cover 30%;
+    }
 }
 
 .about-content {
@@ -421,8 +454,18 @@ a {
 .singers {
     display: flex;
     justify-content: center;
+    opacity: 0;
+    transform: translateY(40px) scale(0.8);
+    animation: fadeIn 1.2s ease-in forwards;
+    animation-timeline: view(); /* ignore */
+    animation-range:entry 0% cover 30% ;/* ignore */
 }
-
+@media (prefers-reduced-motion: no-preference) {
+    .singers {
+        animation-timeline: view(); /* ignore */
+        animation-range: entry 0% cover 30%;
+    }
+}
 .singers-content {
     display: flex;
     width: 100%;
@@ -604,7 +647,17 @@ a {
     background: linear-gradient(180deg, rgba(56, 29, 219, 0.05) 0%, rgba(56, 29, 219, 0.00) 100%);
     padding-top: 150px;
     margin-bottom: 234px;
-
+    opacity: 0;
+    transform: translateY(40px) scale(0.8);
+    animation: fadeIn 1.2s ease-in forwards;
+    animation-timeline: view(); /* ignore */
+    animation-range:entry 0% cover 30% ;/* ignore */
+}
+@media (prefers-reduced-motion: no-preference) {
+    .schedule {
+        animation-timeline: view(); /* ignore */
+        animation-range: entry 0% cover 30%;
+    }
 }
 
 .schedule-title-content {
@@ -816,7 +869,18 @@ a {
     justify-content: center;
     flex-direction: column;
     align-items: center;
-    gap: 60px
+    gap: 60px;
+    opacity: 0;
+    transform: translateY(40px) scale(0.8);
+    animation: fadeIn 1.2s ease-in forwards;
+    animation-timeline: view(); /* ignore */
+    animation-range:entry 0% cover 30% ;/* ignore */
+}
+@media (prefers-reduced-motion: no-preference) {
+    .sell {
+        animation-timeline: view(); /* ignore */
+        animation-range: entry 0% cover 30%;
+    }
 }
 
 .sell-content {
@@ -928,8 +992,18 @@ a {
     flex-direction: column;
     align-items: center;
     margin-top: 244px;
+    opacity: 0;
+    transform: translateY(40px) scale(0.8);
+    animation: fadeIn 1.2s ease-in forwards;
+    animation-timeline: view(); /* ignore */
+    animation-range:entry 0% cover 30% ;/* ignore */
 }
-
+@media (prefers-reduced-motion: no-preference) {
+    .sponsors {
+        animation-timeline: view(); /* ignore */
+        animation-range: entry 0% cover 30%;
+    }
+}
 .sponsors-title {
     color: #222;
     text-align: center;
@@ -985,6 +1059,17 @@ a {
     align-items: center;
     margin-top: 217px;
     margin-bottom: 165px;
+    opacity: 0;
+    transform: translateY(40px) scale(0.8);
+    animation: fadeIn 1.2s ease-in forwards;
+    animation-timeline: view(); /* ignore */
+    animation-range:entry 0% cover 30% ;/* ignore */
+}
+@media (prefers-reduced-motion: no-preference) {
+    .testimonials {
+        animation-timeline: view(); /* ignore */
+        animation-range: entry 0% cover 30%;
+    }
 }
 
 .testimonials-title {
@@ -1119,8 +1204,18 @@ a {
     gap: 30px;
     margin-bottom: 240px;
     background: linear-gradient(180deg, rgba(252, 82, 82, 0.05) 0%, rgba(252, 82, 82, 0.00) 100%);
+    opacity: 0;
+    transform: translateY(40px) scale(0.8);
+    animation: fadeIn 1.2s ease-in forwards;
+    animation-timeline: view(); /* ignore */
+    animation-range:entry 0% cover 30% ;/* ignore */
 }
-
+@media (prefers-reduced-motion: no-preference) {
+    .best-shots {
+        animation-timeline: view(); /* ignore */
+        animation-range: entry 0% cover 30%;
+    }
+}
 .best-shots-content {
     display: flex;
     width: 100%;
@@ -1255,8 +1350,18 @@ a {
 
 .contact-us {
     display: flex;
+    opacity: 0;
+    transform: translateY(40px) scale(0.8);
+    animation: fadeIn 1.2s ease-in forwards;
+    animation-timeline: view(); /* ignore */
+    animation-range:entry 0% cover 30% ;/* ignore */
 }
-
+@media (prefers-reduced-motion: no-preference) {
+    .contact-us {
+        animation-timeline: view(); /* ignore */
+        animation-range: entry 0% cover 30%;
+    }
+}
 .contact-info {
     display: flex;
     flex-direction: column;
