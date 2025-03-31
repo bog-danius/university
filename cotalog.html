@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Catalog</title>
+    <link rel="stylesheet" href="assert/css/cotalog-style.css">
+</head>
+<body>
+<header class="header">
+    <widget-header></widget-header>
+</header>
+<main class="main">
+    <div class="main-container">
+        <p class="main-container-text">Каталог</p>
+
+        <input type="text" id="search" placeholder="Поиск товаров">
+
+        <select id="sort">
+            <option value="default">Сортировать по</option>
+            <option value="name">По имени</option>
+            <option value="price">По цене</option>
+            <option value="rating">По рейтингу</option>
+        </select>
+
+        <div id="categories"></div>
+
+        <div id="catalog" class="catalog"></div>
+
+        <div id="buttons">
+            <button id="reset" class="btn" >Сбросить фильтры</button>
+            <button onclick="applyMethod('map')" class="btn">Изменить названия</button>
+            <button onclick="applyMethod('filter')" class="btn">Фильтр по цене > 30000</button>
+            <button onclick="applyMethod('reduce')" class="btn">Общая стоимость</button>
+            <button onclick="applyMethod('reverse')" class="btn">Обратный порядок</button>
+            <button onclick="applyMethod('every')" class="btn">Все товары > 40000</button>
+            <button onclick="applyMethod('find')" class="btn">Найти первый товар > 45000</button>
+        </div>
+
+    </div>
+</main>
+<footer class="footer">
+    <widget-footer></widget-footer>
+</footer>
+<script>
+    const catalog = document.getElementById('catalog');
+    const search = document.getElementById('search');
+    const sort = document.getElementById('sort');
+    const reset = document.getElementById('reset');
+
+    let products = [];
+
+    async function loadCatalog() {
+        try {
+            const response = await fetch('http://localhost:3000/services');
+            const json = await response.json();
+            products = json;
+            renderCatalog(products);
+        } catch (error) {
+            console.error("Ошибка загрузки данных", error);
+        }
+    }
+
+    function renderCatalog(items) {
+        catalog.innerHTML = '';
+        if (items.length === 0) {
+            catalog.innerHTML = "<p class='error'>Товары не найдены</p>";
+            return;
+        }
+        items.forEach(item => {
+            catalog.innerHTML += `
+                    <div class="catalog-cart">
+                        <img src="${item.image}" alt="product" class="catalog-cart__img">
+                        <div class="catalog-cart__text-wrapper">
+                            <p class="catalog-cart__name">${item.name}</p>
+                            <div style="display: flex; flex-direction: column; gap: 10px;">
+                              <p class="catalog-cart__price">${item.price}</p>
+                              <p class="catalog-cart__price">${item.rating}</p>
+                            </div>
+                        </div>
+                        <p class="catalog-cart__description">${item.description}</p>
+                    </div>
+                `;
+        });
+    }
+
+    search.addEventListener('input', (e) => {
+        const value = search.value.toLowerCase();
+        if (value === '') return renderCatalog(products);
+        const filtered = products.filter(product =>
+            product.name.toLowerCase().includes(value) || product.description.toLowerCase().includes(value)
+        );
+        renderCatalog(filtered);
+    });
+
+    sort.addEventListener('input', (e) => {
+        const sorted = [...products].sort((a, b) => {
+            if (sort.value === "name") return a.name.localeCompare(b.name);
+            if (sort.value === "price") return b.price - a.price;
+            if (sort.value === "rating") return b.rating - a.rating;
+            return 0;
+        });
+        renderCatalog(sorted);
+    });
+
+    reset.addEventListener('click', (e) => {
+        search.value = "";
+        sort.value = "default";
+        renderCatalog(products);
+    });
+    function applyMethod(method) {
+        let modifiedProducts;
+        switch (method) {
+            case 'map':
+                modifiedProducts = products.map(p => ({ ...p, name: `Товар: ${p.name}` }));
+                break;
+            case 'filter':
+                modifiedProducts = products.filter(p => p.price > 30000);
+                break;
+            case 'reduce':
+                alert('Общая стоимость: ' + products.reduce((sum, p) => sum + p.price, 0));
+                return;
+            case 'reverse':
+                modifiedProducts = [...products].reverse();
+                break;
+            case 'every':
+                alert(products.every(p => p.price > 40000) ? 'Все товары > 40000' : 'Есть товары ≤ 40000');
+                return;
+            case 'find':
+                const found = products.find(p => p.price > 45000);
+                alert(found ? `Найден: ${found.name}` : 'Товар не найден');
+                return;
+        }
+        renderCatalog(modifiedProducts);
+    }
+
+    loadCatalog();
+</script>
+<script src="assert/js/component-header.js"></script>
+<script src="assert/js/component-footer.js"></script>
+</body>
+</html>

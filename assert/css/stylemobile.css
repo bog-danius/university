@@ -3,10 +3,7 @@
         position: relative;
         justify-content: flex-start;
         padding-left: 20px;
-    }
-
-    .header-container {
-        position: relative;
+        gap: 100px;
     }
 
     .burger-checkbox {
