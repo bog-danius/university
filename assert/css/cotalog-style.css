@@ -154,6 +154,7 @@ a {
     margin: 10px;
     padding: 10px;
     display: flex;
+    gap: 10px;
     flex-direction: column;
     background: #FFF;
     border-radius: 10px;
@@ -201,6 +202,25 @@ a {
 
 .btn:hover {
     background-color: #c0392b;
+}
+.catalog-cart__buttons{
+    display: flex;
+    gap:10px;
+    justify-content: center;
+    align-items: center;
+}
+.btn-catalog{
+    width: fit-content;
+    padding: 10px;
+    background: #FFFFFF;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    cursor: pointer;
+    color: black;
+    box-shadow: 0 0 8px rgb(207, 207, 207);
+}
+.btn-catalog:hover{
+    scale: 1.1;
 }
 .footer {
     display: flex;

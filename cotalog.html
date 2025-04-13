@@ -22,20 +22,28 @@
             <option value="rating">По рейтингу</option>
         </select>
 
+        <select id="sortCategory">
+            <option value="default">Рейтинг</option>
+            <option value="4,6">Рейтинг 4.6</option>
+            <option value="4,7">Рейтинг 4.7</option>
+            <option value="4,8">Рейтинг 4.8</option>
+        </select>
+
         <div id="categories"></div>
 
         <div id="catalog" class="catalog"></div>
 
         <div id="buttons">
-            <button id="reset" class="btn" >Сбросить фильтры</button>
+            <button id="reset" class="btn">Сбросить фильтры</button>
             <button onclick="applyMethod('map')" class="btn">Изменить названия</button>
             <button onclick="applyMethod('filter')" class="btn">Фильтр по цене > 30000</button>
             <button onclick="applyMethod('reduce')" class="btn">Общая стоимость</button>
             <button onclick="applyMethod('reverse')" class="btn">Обратный порядок</button>
             <button onclick="applyMethod('every')" class="btn">Все товары > 40000</button>
             <button onclick="applyMethod('find')" class="btn">Найти первый товар > 45000</button>
+            <button onclick="applyMethod('top10')" class="btn">Топ 10 дорогих</button>
+            <button onclick="applyMethod('a_names')" class="btn">Имя начинается с "А"</button>
         </div>
-
     </div>
 </main>
 <footer class="footer">
@@ -45,95 +53,287 @@
     const catalog = document.getElementById('catalog');
     const search = document.getElementById('search');
     const sort = document.getElementById('sort');
+    const sortCategory = document.getElementById('sortCategory');
     const reset = document.getElementById('reset');
 
     let products = [];
+    let currentProducts = [];
+    let favorites = [];
+    let cartItems = [];
 
-    async function loadCatalog() {
-        try {
-            const response = await fetch('http://localhost:3000/services');
-            const json = await response.json();
-            products = json;
-            renderCatalog(products);
-        } catch (error) {
-            console.error("Ошибка загрузки данных", error);
-        }
-    }
+    const API_URL = 'http://localhost:3000/services';
+    const FAVORITES_URL = 'http://localhost:3000/favorites';
+    const CART_URL = 'http://localhost:3000/cart';
 
     function renderCatalog(items) {
         catalog.innerHTML = '';
-        if (items.length === 0) {
+
+        if (!items || items.length === 0) {
             catalog.innerHTML = "<p class='error'>Товары не найдены</p>";
             return;
         }
+
         items.forEach(item => {
-            catalog.innerHTML += `
-                    <div class="catalog-cart">
-                        <img src="${item.image}" alt="product" class="catalog-cart__img">
-                        <div class="catalog-cart__text-wrapper">
-                            <p class="catalog-cart__name">${item.name}</p>
-                            <div style="display: flex; flex-direction: column; gap: 10px;">
-                              <p class="catalog-cart__price">${item.price}</p>
-                              <p class="catalog-cart__price">${item.rating}</p>
-                            </div>
-                        </div>
-                        <p class="catalog-cart__description">${item.description}</p>
+            const isFavorite = favorites.includes(item.id);
+            const inCart = cartItems.includes(item.id);
+
+            const productElement = document.createElement('div');
+            productElement.className = 'catalog-cart';
+            productElement.innerHTML = `
+                <img src="${item.image}" alt="product" class="catalog-cart__img">
+                <div class="catalog-cart__text-wrapper">
+                    <p class="catalog-cart__name">${item.name}</p>
+                    <div style="display: flex; flex-direction: column; gap: 10px;">
+                        <p class="catalog-cart__price">${item.price}руб</p>
+                        <p class="catalog-cart__price">Рейтинг: ${item.rating}</p>
                     </div>
-                `;
+                </div>
+                <p class="catalog-cart__description">${item.description}</p>
+                <div class="catalog-cart__buttons">
+                    <button class="btn-catalog ${isFavorite ? 'active' : ''}">
+                        ${isFavorite ? 'Убрать из избранного' : 'В избранное'}
+                    </button>
+                    <button class="btn-catalog ${inCart ? 'active' : ''}">
+                        ${inCart ? 'Убрать из корзины' : 'В корзину'}
+                    </button>
+                </div>
+            `;
+
+            const favoriteBtn = productElement.querySelector('.btn-catalog:first-child');
+            const cartBtn = productElement.querySelector('.btn-catalog:last-child');
+
+            favoriteBtn.addEventListener('click', () => toggleFavorite(item.id, favoriteBtn));
+            cartBtn.addEventListener('click', () => toggleCart(item.id, cartBtn));
+
+            catalog.appendChild(productElement);
         });
     }
 
-    search.addEventListener('input', (e) => {
-        const value = search.value.toLowerCase();
-        if (value === '') return renderCatalog(products);
-        const filtered = products.filter(product =>
-            product.name.toLowerCase().includes(value) || product.description.toLowerCase().includes(value)
-        );
-        renderCatalog(filtered);
-    });
+    // Загрузка данных
+    async function loadProducts() {
+        try {
+            const response = await fetch(API_URL);
+            products = await response.json();
+            currentProducts = [...products];
+            renderCatalog(currentProducts);
 
-    sort.addEventListener('input', (e) => {
-        const sorted = [...products].sort((a, b) => {
-            if (sort.value === "name") return a.name.localeCompare(b.name);
-            if (sort.value === "price") return b.price - a.price;
-            if (sort.value === "rating") return b.rating - a.rating;
-            return 0;
-        });
-        renderCatalog(sorted);
-    });
+            const favResponse = await fetch(FAVORITES_URL);
+            favorites = (await favResponse.json()).map(item => item.productId);
 
-    reset.addEventListener('click', (e) => {
-        search.value = "";
-        sort.value = "default";
-        renderCatalog(products);
-    });
-    function applyMethod(method) {
-        let modifiedProducts;
-        switch (method) {
-            case 'map':
-                modifiedProducts = products.map(p => ({ ...p, name: `Товар: ${p.name}` }));
-                break;
-            case 'filter':
-                modifiedProducts = products.filter(p => p.price > 30000);
-                break;
-            case 'reduce':
-                alert('Общая стоимость: ' + products.reduce((sum, p) => sum + p.price, 0));
-                return;
-            case 'reverse':
-                modifiedProducts = [...products].reverse();
-                break;
-            case 'every':
-                alert(products.every(p => p.price > 40000) ? 'Все товары > 40000' : 'Есть товары ≤ 40000');
-                return;
-            case 'find':
-                const found = products.find(p => p.price > 45000);
-                alert(found ? `Найден: ${found.name}` : 'Товар не найден');
-                return;
+            const cartResponse = await fetch(CART_URL);
+            cartItems = (await cartResponse.json()).map(item => item.productId);
+        } catch (error) {
+            console.error('Ошибка загрузки данных:', error);
         }
-        renderCatalog(modifiedProducts);
     }
 
-    loadCatalog();
+    // Поиск товаров
+    search.addEventListener('input', (e) => {
+        const value = e.target.value.toLowerCase().trim();
+
+        if (value === '') {
+            currentProducts = [...products];
+        } else {
+            currentProducts = products.filter(p =>
+                p.name.toLowerCase().includes(value) ||
+                p.description.toLowerCase().includes(value)
+            );
+        }
+
+        renderCatalog(currentProducts);
+    });
+
+    // Сортировка
+    sort.addEventListener('change', (e) => {
+        const value = e.target.value;
+
+        if (value === 'default') {
+            currentProducts = [...products];
+        } else {
+            currentProducts = [...currentProducts].sort((a, b) => {
+                if (value === 'name') return a.name.localeCompare(b.name);
+                if (value === 'price') return b.price - a.price;
+                if (value === 'rating') return b.rating - a.rating;
+                return 0;
+            });
+        }
+
+        renderCatalog(currentProducts);
+    });
+
+    // Фильтрация по рейтингу
+    sortCategory.addEventListener('change', function() {
+        const selectedRating = this.value;
+
+        if (selectedRating === "default") {
+            currentProducts = [...products];
+        } else {
+            const targetRating = parseFloat(selectedRating.replace(',', '.'));
+            currentProducts = products.filter(product => {
+                const productRating = typeof product.rating === 'string'
+                    ? parseFloat(product.rating.replace(',', '.'))
+                    : product.rating;
+                return productRating === targetRating;
+            });
+        }
+
+        renderCatalog(currentProducts);
+    });
+
+    // Сброс фильтров
+    reset.addEventListener('click', () => {
+        search.value = '';
+        sort.value = 'default';
+        sortCategory.value = 'default';
+        currentProducts = [...products];
+        renderCatalog(currentProducts);
+    });
+
+    // Методы массивов
+    function applyMethod(method) {
+        try {
+            const methodHandlers = {
+                map: handleMap,
+                filter: handleFilter,
+                reduce: handleReduce,
+                reverse: handleReverse,
+                every: handleEvery,
+                find: handleFind,
+                top10: handleTop10,
+                a_names: handleANames
+            };
+
+            if (methodHandlers[method]) {
+                methodHandlers[method]();
+            }
+        } catch (error) {
+            console.error('Ошибка при применении метода:', error);
+        }
+    }
+
+    function handleMap() {
+        currentProducts = currentProducts.map(p => ({
+            ...p,
+            name: `Товар: ${p.name}`
+        }));
+        renderCatalog(currentProducts);
+    }
+
+    function handleFilter() {
+        currentProducts = currentProducts.filter(p => p.price > 30000);
+        renderCatalog(currentProducts);
+    }
+
+    function handleReduce() {
+        const total = currentProducts.reduce((sum, p) => sum + p.price, 0);
+        alert(`Общая стоимость: ${total} руб.`);
+    }
+
+    function handleReverse() {
+        currentProducts = [...currentProducts].reverse();
+        renderCatalog(currentProducts);
+    }
+
+    function handleEvery() {
+        const allExpensive = currentProducts.every(p => p.price > 40000);
+        alert(allExpensive ? 'Все товары > 40000 руб.' : 'Есть товары ≤ 40000 руб.');
+    }
+
+    function handleFind() {
+        const foundProduct = currentProducts.find(p => p.price > 45000);
+        alert(foundProduct ? `Найден: ${foundProduct.name}` : 'Товар не найден');
+    }
+
+    function handleTop10() {
+        currentProducts = [...products]
+            .sort((a, b) => b.price - a.price)
+            .slice(0, 10);
+        renderCatalog(currentProducts);
+    }
+
+    function handleANames() {
+        currentProducts = products.filter(p =>
+            p.name.toLowerCase().startsWith('а')
+        );
+        renderCatalog(currentProducts);
+    }
+
+    // Работа с избранным и корзиной
+    async function toggleFavorite(productId, button) {
+        try {
+            const checkResponse = await fetch(`${FAVORITES_URL}?productId=${productId}`);
+            const existing = await checkResponse.json();
+
+            if (existing.length > 0) {
+                // Удаление
+                await fetch(`${FAVORITES_URL}/${existing[0].id}`, {
+                    method: 'DELETE'
+                });
+                favorites = favorites.filter(id => id !== productId);
+                button.textContent = 'В избранное';
+                button.classList.remove('active');
+            } else {
+                // Добавление
+                const product = products.find(p => p.id === productId);
+                await fetch(FAVORITES_URL, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                        productId: product.id,
+                        name: product.name,
+                        price: product.price,
+                        image: product.image,
+                        addedAt: new Date().toISOString()
+                    })
+                });
+                favorites.push(productId);
+                button.textContent = 'Убрать из избранного';
+                button.classList.add('active');
+            }
+        } catch (error) {
+            console.error('Ошибка при работе с избранным:', error);
+        }
+    }
+
+    async function toggleCart(productId, button) {
+        try {
+            const checkResponse = await fetch(`${CART_URL}?productId=${productId}`);
+            const existing = await checkResponse.json();
+
+            if (existing.length > 0) {
+                // Удаление
+                await fetch(`${CART_URL}/${existing[0].id}`, {
+                    method: 'DELETE'
+                });
+                cartItems = cartItems.filter(id => id !== productId);
+                button.textContent = 'В корзину';
+                button.classList.remove('active');
+            } else {
+                // Добавление
+                const product = products.find(p => p.id === productId);
+                await fetch(CART_URL, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                        productId: product.id,
+                        name: product.name,
+                        price: product.price,
+                        image: product.image,
+                        addedAt: new Date().toISOString(),
+                        quantity: 1
+                    })
+                });
+                cartItems.push(productId);
+                button.textContent = 'Убрать из корзины';
+                button.classList.add('active');
+            }
+        } catch (error) {
+            console.error('Ошибка при работе с корзиной:', error);
+        }
+    }
+
+    document.addEventListener('DOMContentLoaded', loadProducts);
+
 </script>
 <script src="assert/js/component-header.js"></script>
 <script src="assert/js/component-footer.js"></script>
