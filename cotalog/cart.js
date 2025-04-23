@@ -1,36 +1,45 @@
-async function toggleCart(productId, button) {
+async function checkCartStatus(productId) {
     try {
-        const checkResponse = await fetch(`${CART_URL}?productId=${productId}`);
-        const existing = await checkResponse.json();
+        const response = await fetch(`${CART_URL}?productId=${productId}`);
+        const cartItems = await response.json();
+        return cartItems.some(item => item.productId === productId);
+    } catch (error) {
+        console.error('Error checking cart status:', error);
+        return false;
+    }
+}
 
-        if (existing.length > 0) {
-            // Удаление
-            await fetch(`${CART_URL}/${existing[0].id}`, {
-                method: 'DELETE'
-            });
-            cartItems = cartItems.filter(id => id !== productId);
-            button.textContent = 'В корзину';
-            button.classList.remove('active');
+async function toggleCart(product) {
+    try {
+        const inCart = await checkCartStatus(product.id);
+
+        if (inCart) {
+            const response = await fetch(`${CART_URL}?productId=${product.id}`);
+            const cartItems = await response.json();
+            const cartItem = cartItems.find(item => item.productId === product.id);
+
+            if (cartItem) {
+                await fetch(`${CART_URL}/${cartItem.id}`, {
+                    method: 'DELETE'
+                });
+            }
         } else {
-            // Добавление
-            const product = products.find(p => p.id === productId);
             await fetch(CART_URL, {
                 method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
+                headers: {
+                    'Content-Type': 'application/json'
+                },
                 body: JSON.stringify({
                     productId: product.id,
-                    name: product.name,
-                    price: product.price,
-                    image: product.image,
-                    addedAt: new Date().toISOString(),
+                    ...product,
                     quantity: 1
                 })
             });
-            cartItems.push(productId);
-            button.textContent = 'Убрать из корзины';
-            button.classList.add('active');
         }
+
+        // Обновляем отображение
+        loadProducts(currentPage, currentFilter);
     } catch (error) {
-        console.error('Ошибка при работе с корзиной:', error);
+        console.error('Error toggling cart:', error);
     }
 }

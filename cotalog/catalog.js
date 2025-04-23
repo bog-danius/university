@@ -1,75 +1,71 @@
-const catalog = document.getElementById('catalog');
-const search = document.getElementById('search');
-const sort = document.getElementById('sort');
-const sortCategory = document.getElementById('sortCategory');
-const reset = document.getElementById('reset');
-
-let products = [];
-let currentProducts = [];
-let favorites = [];
-let cartItems = [];
-
-
-function renderCatalog(items) {
+async function renderCatalog(items) {
+    console.log('Rendering catalog with', items.length, 'items');
     catalog.innerHTML = '';
 
     if (!items || items.length === 0) {
-        catalog.innerHTML = "<p class='error'>Товары не найдены</p>";
+        catalog.innerHTML = '<p class="no-products">Товары не найдены</p>';
         return;
     }
 
-    items.forEach(item => {
-        const isFavorite = favorites.includes(item.id);
-        const inCart = cartItems.includes(item.id);
+    try {
+        const fragment = document.createDocumentFragment();
 
-        const productElement = document.createElement('div');
-        productElement.className = 'catalog-cart';
-        productElement.innerHTML = `
-                <img src="${item.image}" alt="product" class="catalog-cart__img">
-                <div class="catalog-cart__text-wrapper">
-                    <p class="catalog-cart__name">${item.name}</p>
-                    <div style="display: flex; flex-direction: column; gap: 10px;">
-                        <p class="catalog-cart__price">${item.price}руб</p>
-                        <p class="catalog-cart__price">Рейтинг: ${item.rating}</p>
+        const itemsToShow = items.slice(0, ITEMS_PER_PAGE);
+
+        await Promise.all(itemsToShow.map(async (item) => {
+            const [isFavorite, inCart] = await Promise.all([
+                checkFavoritesStatus(item.id),
+                checkCartStatus(item.id)
+            ]);
+
+            const productElement = document.createElement('div');
+            productElement.className = 'catalog-item';
+            productElement.innerHTML = `
+                <div class="catalog-cart">
+                    <img src="${item.image}" alt="product" class="catalog-cart__img">
+                    <div class="catalog-cart__text-wrapper">
+                        <p class="catalog-cart__name">${item.name}</p>
+                        <div style="display: flex; flex-direction: column; gap: 10px;">
+                            <p class="catalog-cart__price">${item.price} руб</p>
+                            <p class="catalog-cart__price">Рейтинг: ${item.rating}</p>
+                        </div>
+                    </div>
+                    <p class="catalog-cart__description">${item.description}</p>
+                    <div class="catalog-cart__buttons">
+                        <button class="btn-catalog ${isFavorite ? 'active' : ''}" data-id="${item.id}" data-type="favorite">
+                            ${isFavorite ? 'Убрать из избранного' : 'В избранное'}
+                        </button>
+                        <button class="btn-catalog ${inCart ? 'active' : ''}" data-id="${item.id}" data-type="cart">
+                            ${inCart ? 'Убрать из корзины' : 'В корзину'}
+                        </button>
                     </div>
                 </div>
-                <p class="catalog-cart__description">${item.description}</p>
-                <div class="catalog-cart__buttons">
-                    <button class="btn-catalog ${isFavorite ? 'active' : ''}">
-                        ${isFavorite ? 'Убрать из избранного' : 'В избранное'}
-                    </button>
-                    <button class="btn-catalog ${inCart ? 'active' : ''}">
-                        ${inCart ? 'Убрать из корзины' : 'В корзину'}
-                    </button>
-                </div>
             `;
+            fragment.appendChild(productElement);
+        }));
 
-        const favoriteBtn = productElement.querySelector('.btn-catalog:first-child');
-        const cartBtn = productElement.querySelector('.btn-catalog:last-child');
+        catalog.appendChild(fragment);
 
-        favoriteBtn.addEventListener('click', () => toggleFavorite(item.id, favoriteBtn));
-        cartBtn.addEventListener('click', () => toggleCart(item.id, cartBtn));
+        document.querySelectorAll('[data-type="favorite"]').forEach(button => {
+            const productId = button.getAttribute('data-id');
+            const product = items.find(item => item.id == productId);
+            button.addEventListener('click', () => toggleFavorite(product));
+        });
 
-        catalog.appendChild(productElement);
-    });
-}
-
-// Загрузка данных
-async function loadProducts() {
-    try {
-        const response = await fetch(API_URL);
-        products = await response.json();
-        currentProducts = [...products];
-        renderCatalog(currentProducts);
-
-        const favResponse = await fetch(FAVORITES_URL);
-        favorites = (await favResponse.json()).map(item => item.productId);
-
-        const cartResponse = await fetch(CART_URL);
-        cartItems = (await cartResponse.json()).map(item => item.productId);
+        document.querySelectorAll('[data-type="cart"]').forEach(button => {
+            const productId = button.getAttribute('data-id');
+            const product = items.find(item => item.id == productId);
+            button.addEventListener('click', () => toggleCart(product));
+        });
     } catch (error) {
-        console.error('Ошибка загрузки данных:', error);
+        console.error('Error rendering catalog:', error);
+        catalog.innerHTML = '<p class="error">Ошибка отображения товаров</p>';
     }
 }
 
-document.addEventListener('DOMContentLoaded', loadProducts);
+function initCatalog() {
+    console.log('Catalog initialized');
+    loadProducts(totalPages);
+}
+
+document.addEventListener('DOMContentLoaded', initCatalog);

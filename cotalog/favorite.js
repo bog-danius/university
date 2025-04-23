@@ -1,38 +1,45 @@
-
-
-// Работа с избранным и корзиной
-async function toggleFavorite(productId, button) {
+async function checkFavoritesStatus(productId) {
     try {
-        const checkResponse = await fetch(`${FAVORITES_URL}?productId=${productId}`);
-        const existing = await checkResponse.json();
+        const response = await fetch(`${FAVORITES_URL}?productId=${productId}`);
+        const favorites = await response.json();
+        return favorites.some(item => item.productId === productId);
+    } catch (error) {
+        console.error('Error checking favorites status:', error);
+        return false;
+    }
+}
 
-        if (existing.length > 0) {
-            // Удаление
-            await fetch(`${FAVORITES_URL}/${existing[0].id}`, {
-                method: 'DELETE'
-            });
-            favorites = favorites.filter(id => id !== productId);
-            button.textContent = 'В избранное';
-            button.classList.remove('active');
+async function toggleFavorite(product) {
+    try {
+        const isFavorite = await checkFavoritesStatus(product.id);
+
+        if (isFavorite) {
+
+            const response = await fetch(`${FAVORITES_URL}?productId=${product.id}`);
+            const favorites = await response.json();
+            const favoriteItem = favorites.find(item => item.productId === product.id);
+
+            if (favoriteItem) {
+                await fetch(`${FAVORITES_URL}/${favoriteItem.id}`, {
+                    method: 'DELETE'
+                });
+            }
         } else {
-            // Добавление
-            const product = products.find(p => p.id === productId);
+
             await fetch(FAVORITES_URL, {
                 method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
+                headers: {
+                    'Content-Type': 'application/json'
+                },
                 body: JSON.stringify({
                     productId: product.id,
-                    name: product.name,
-                    price: product.price,
-                    image: product.image,
-                    addedAt: new Date().toISOString()
+                    ...product
                 })
             });
-            favorites.push(productId);
-            button.textContent = 'Убрать из избранного';
-            button.classList.add('active');
         }
+
+        loadProducts(currentPage, currentFilter);
     } catch (error) {
-        console.error('Ошибка при работе с избранным:', error);
+        console.error('Error toggling favorite:', error);
     }
 }
