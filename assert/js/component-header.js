@@ -32,7 +32,7 @@ class ComponentHeader extends HTMLElement {
                         </li>
                         <li><a href="#" class="nav-link">Contact Us</a></li>
                         <li>
-                            <button class="get-tickets">Get Tickets</button>
+                            <button class="get-tickets"><a href="/cotalog.html">Get Tickets</a></button>
                         </li>
                     </ol>
                 </nav>
