@@ -1,0 +1,6 @@
+import "./src/js/components/component-sell.js"
+import "./src/js/components/component-testimonials.js"
+import "./src/js/components/component-categories.js"
+import "./src/js/components/component-bestshots.js"
+import "./src/js/components/component-header.js"
+import "./src/js/components/component-footer.js"

@@ -1,0 +1,196 @@
+@media (max-width: 320px) {
+    .header-container {
+        position: relative;
+        justify-content: flex-start;
+        padding-left: 20px;
+        gap: 100px;
+    }
+
+    .burger-checkbox {
+        display: none;
+    }
+
+    .burger-menu {
+        display: flex;
+        top: 38px;
+
+
+    }
+
+    .navbar {
+        display: none;
+        flex-direction: column;
+        align-items: center;
+        position: absolute;
+        top: 70px;
+        left: 0;
+        width: 101%;
+        background: rgba(0, 0, 0, 0.5);
+        padding: 20px 0;
+    }
+
+    .nav-list {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        width: 100%;
+        text-align: center;
+    }
+
+    .nav-link {
+        display: block;
+        padding: 10px;
+        color: white;
+    }
+
+    .burger-checkbox:checked ~ .navbar {
+        display: flex;
+    }
+
+    .hero {
+        margin-bottom: 0;
+        padding-bottom: 143px;
+    }
+
+    .hero-title {
+        font-size: 46px;
+    }
+
+    .hero-text {
+        font-size: 16px;
+    }
+
+    .countdown {
+        display: none;
+    }
+
+    .hero-buttons {
+        gap: 0;
+    }
+
+    .btn-primary {
+        padding: 0 8px;
+    }
+
+    .btn-secondary {
+        gap: 0;
+    }
+
+    .categories {
+        display: none;
+    }
+
+    .about {
+        margin-bottom: 0;
+    }
+
+    .about-content {
+        padding-left: 20px;
+        flex-direction: column;
+    }
+
+    .about-image1 {
+        width: 280px;
+        height: 280px;
+    }
+
+    .about-image2 {
+        width: 280px;
+        height: 280px;
+        margin-left: 15px;
+        margin-top: -25px;
+    }
+
+    .btn-about {
+        width: 90%;
+        justify-content: center;
+    }
+
+    .btn-singer {
+        width: 90%;
+    }
+
+    .singer-container {
+        width: 90%;
+        height: 90%;
+        box-shadow: 0 2px 2px 0 rgba(56, 29, 219, 0.01);
+    }
+
+    .singer-images {
+
+    }
+    .singer-container::before {
+        width: 135px;
+        height: 135px;
+        filter: blur(55px);
+    }
+    .singer-container1 {
+        transform: translateY(80px);
+    }
+
+    .singer-container2 {
+        transform: translatey(80px);
+    }
+
+    .singer-container3 {
+        transform: translateY(70px);
+    }
+
+    .singer-container4 {
+        transform: translateY(70px);
+        left: 0;
+    }
+
+    .schedule {
+        padding-top: 0;
+        margin-top: 80px;
+        margin-bottom: 80px;
+    }
+
+    .component-sell-block {
+        padding: 25px 58px;
+    }
+
+    .sponsors {
+        margin-top: 80px;
+    }
+
+    .sponsors-list {
+        padding: 0 20px;
+    }
+
+    .btn-sponsors {
+        width: 90%;
+        justify-content: center;
+    }
+
+    .testimonials {
+        display: none;
+    }
+
+    .best-shots {
+        margin-bottom: 80px;
+    }
+
+    .best-shots-content {
+        padding-top: 80px;
+    }
+
+    .best-shots-card {
+        padding-left: 20px;
+    }
+
+    .btn-contact {
+        width: 97%;
+    }
+
+    .form-input {
+        max-width: 290px;
+    }
+
+    .footer-menu1 {
+        flex-direction: column;
+        align-items: baseline;
+    }
+
+}

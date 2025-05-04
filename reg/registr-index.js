@@ -1,0 +1,11 @@
+import "../src/js/reg/autorez.js"
+import "../src/js/api/api.js"
+import "../src/js/reg/reg.js"
+import "../src/js/reg/popup.js"
+import "../src/js/reg/formswitch.js"
+import "../src/js/reg/password.js"
+import "../src/js/reg/datevalid.js"
+import "../src/js/reg/nickname.js"
+import "../src/js/components/component-header.js"
+import "../src/js/components/component-footer.js"
+

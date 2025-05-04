@@ -1,0 +1,322 @@
+{
+  "services": [
+    {
+      "id": "1",
+      "name": "Продвижение в социальных сетях",
+      "category": "SMM",
+      "price": 138,
+      "rating": 4.8,
+      "description": "Комплексное продвижение вашей музыки в Instagram, TikTok и других платформах.",
+      "image": "https://surl.li/zyjkfo"
+    },
+    {
+      "id": "2",
+      "name": "Публикация на музыкальных блогах",
+      "category": "Медиа",
+      "price": 230,
+      "rating": 4.6,
+      "description": "Размещение вашего трека на популярных музыкальных блогах и платформах.",
+      "image": "https://surl.li/zyjkfo"
+    },
+    {
+      "id": "3",
+      "name": "Таргетированная реклама",
+      "category": "Реклама",
+      "price": 184,
+      "rating": 4.9,
+      "description": "Настройка и ведение рекламных кампаний для целевой аудитории",
+      "image": "https://surl.li/zyjkfo"
+    },
+    {
+      "id": "4",
+      "name": "Продвижение на радио",
+      "category": "Радио",
+      "price": 322,
+      "rating": 4.5,
+      "description": "Ротация вашего трека на популярных радиостанциях.",
+      "image": "https://surl.li/zyjkfo"
+    },
+    {
+      "id": "5",
+      "name": "YouTube продвижение",
+      "category": "Видео",
+      "price": 166,
+      "rating": 4.7,
+      "description": "Увеличение просмотров и вовлеченности на вашем YouTube-канале.",
+      "image": "https://surl.li/zyjkfo"
+    },
+    {
+      "id": "6",
+      "name": "Работа с подкастами",
+      "category": "Аудио",
+      "price": 203,
+      "rating": 4.4,
+      "description": "Продвижение вашей музыки через популярные подкасты.",
+      "image": "https://surl.li/zyjkfo"
+    },
+    {
+      "id": "7",
+      "name": "PR-кампания",
+      "category": "PR",
+      "price": 370,
+      "rating": 4.8,
+      "description": "Полноценная PR-кампания для артиста или группы.",
+      "image": "https://surl.li/zyjkfo"
+    },
+    {
+      "id": "8",
+      "name": "Продвижение на стриминговых платформах",
+      "category": "Стриминг",
+      "price": 258,
+      "rating": 4.9,
+      "description": "Увеличение прослушиваний на Spotify, Apple Music и других платформах.",
+      "image": "https://surl.li/zyjkfo"
+    },
+    {
+      "id": "9",
+      "name": "Организация концертов",
+      "category": "Ивенты",
+      "price": 462,
+      "rating": 4.6,
+      "description": "Организация и продвижение живых выступлений.",
+      "image": "https://surl.li/zyjkfo"
+    },
+    {
+      "id": "10",
+      "name": "Коллаборации с артистами",
+      "category": "Сети",
+      "price": 277,
+      "rating": 4.7,
+      "description": "Организация совместных проектов с другими музыкантами.",
+      "image": "https://surl.li/zyjkfo"
+    },
+    {
+      "id": "11",
+      "name": "Фотосессия для промо",
+      "category": "Контент",
+      "price": 138,
+      "rating": 4.5,
+      "description": "Профессиональная фотосессия для промоматериалов.",
+      "image": "https://surl.li/zyjkfo"
+    },
+    {
+      "id": "12",
+      "name": "Ведение соцсетей",
+      "category": "SMM",
+      "price": 184,
+      "rating": 4.8,
+      "description": "Полное ведение и оформление ваших социальных сетей.",
+      "image": "https://surl.li/zyjkfo"
+    },
+    {
+      "id": "13",
+      "name": "Создание промо-роликов",
+      "category": "Видео",
+      "price": 230,
+      "rating": 4.6,
+      "description": "Производство коротких промо-роликов для соцсетей.",
+      "image": "https://surl.li/zyjkfo"
+    },
+    {
+      "id": "14",
+      "name": "Работа с прессой",
+      "category": "PR",
+      "price": 422,
+      "rating": 4.7,
+      "description": "Публикации в СМИ и музыкальных изданиях.",
+      "image": "https://surl.li/zyjkfo"
+    },
+    {
+      "id": "15",
+      "name": "Анализ аудитории",
+      "category": "Аналитика",
+      "price": 166,
+      "rating": 4.9,
+      "description": "Глубокий анализ вашей целевой аудитории и стратегии продвижения.",
+      "image": "https://surl.li/zyjkfo"
+    },
+    {
+      "id": "16",
+      "name": "Мерч для артиста",
+      "category": "Продукция",
+      "price": 345,
+      "rating": 4.7,
+      "description": "Разработка и производство мерча для фанатов.",
+      "image": "https://surl.li/zyjkfo"
+    },
+    {
+      "id": "17",
+      "name": "Оформление сцены",
+      "category": "Ивенты",
+      "price": 510,
+      "rating": 4.8,
+      "description": "Профессиональное оформление сцены для выступлений.",
+      "image": "https://surl.li/zyjkfo"
+    },
+    {
+      "id": "18",
+      "name": "Продвижение в Shazam",
+      "category": "Стриминг",
+      "price": 290,
+      "rating": 4.6,
+      "description": "Повышение узнаваемости вашей музыки в Shazam.",
+      "image": "https://surl.li/zyjkfo"
+    },
+    {
+      "id": "19",
+      "name": "Создание логотипа",
+      "category": "Дизайн",
+      "price": 215,
+      "rating": 4.5,
+      "description": "Разработка уникального логотипа для артиста или группы.",
+      "image": "https://surl.li/zyjkfo"
+    },
+    {
+      "id": "20",
+      "name": "Тизер-кампания",
+      "category": "Реклама",
+      "price": 380,
+      "rating": 4.7,
+      "description": "Создание интриги перед релизом нового трека или альбома.",
+      "image": "https://surl.li/zyjkfo"
+    },
+    {
+      "id": "21",
+      "name": "Организация тура",
+      "category": "Ивенты",
+      "price": 890,
+      "rating": 4.9,
+      "description": "Полная организация концертного тура по городам.",
+      "image": "https://surl.li/zyjkfo"
+    },
+    {
+      "id": "22",
+      "name": "Создание сайта",
+      "category": "Веб",
+      "price": 540,
+      "rating": 4.8,
+      "description": "Разработка персонального сайта для артиста.",
+      "image": "https://surl.li/zyjkfo"
+    },
+    {
+      "id": "23",
+      "name": "Продвижение в Telegram",
+      "category": "SMM",
+      "price": 175,
+      "rating": 4.6,
+      "description": "Создание и продвижение канала в Telegram.",
+      "image": "https://surl.li/zyjkfo"
+    },
+    {
+      "id": "24",
+      "name": "Съемка live-выступления",
+      "category": "Видео",
+      "price": 420,
+      "rating": 4.7,
+      "description": "Профессиональная съемка и монтаж live-выступления.",
+      "image": "https://surl.li/zyjkfo"
+    },
+    {
+      "id": "25",
+      "name": "Продвижение в VK Музыка",
+      "category": "Стриминг",
+      "price": 230,
+      "rating": 4.5,
+      "description": "Увеличение прослушиваний в VK Музыка.",
+      "image": "https://surl.li/zyjkfo"
+    },
+    {
+      "id": "26",
+      "name": "Копирайтинг",
+      "category": "Контент",
+      "price": 150,
+      "rating": 4.4,
+      "description": "Написание продающих текстов для соцсетей и сайта.",
+      "image": "https://surl.li/zyjkfo"
+    },
+    {
+      "id": "27",
+      "name": "Создание визиток",
+      "category": "Дизайн",
+      "price": 95,
+      "rating": 4.3,
+      "description": "Дизайн и печать визиток для артиста или команды.",
+      "image": "https://surl.li/zyjkfo"
+    },
+    {
+      "id": "28",
+      "name": "Продвижение в SoundCloud",
+      "category": "Стриминг",
+      "price": 210,
+      "rating": 4.6,
+      "description": "Увеличение прослушиваний и подписчиков в SoundCloud.",
+      "image": "https://surl.li/zyjkfo"
+    },
+    {
+      "id": "29",
+      "name": "Создание email-рассылки",
+      "category": "Маркетинг",
+      "price": 320,
+      "rating": 4.7,
+      "description": "Настройка email-маркетинга для общения с фанатами.",
+      "image": "https://surl.li/zyjkfo"
+    },
+    {
+      "id": "30",
+      "name": "Организация фан-встреч",
+      "category": "Ивенты",
+      "price": 380,
+      "rating": 4.8,
+      "description": "Организация встреч с фанатами и автограф-сессий.",
+      "image": "https://surl.li/zyjkfo"
+    }
+  ],
+  "favorites": [
+    {
+      "id": "2",
+      "productId": "2",
+      "name": "Публикация на музыкальных блогах",
+      "category": "Медиа",
+      "price": 230,
+      "rating": 4.6,
+      "description": "Размещение вашего трека на популярных музыкальных блогах и платформах.",
+      "image": "https://surl.li/zyjkfo"
+    },
+    {
+      "id": "12",
+      "productId": "12",
+      "name": "Ведение соцсетей",
+      "category": "SMM",
+      "price": 184,
+      "rating": 4.8,
+      "description": "Полное ведение и оформление ваших социальных сетей.",
+      "image": "https://surl.li/zyjkfo"
+    }
+  ],
+  "cart": [
+    {
+      "id": "12",
+      "productId": "12",
+      "name": "Ведение соцсетей",
+      "category": "SMM",
+      "price": 184,
+      "rating": 4.8,
+      "description": "Полное ведение и оформление ваших социальных сетей.",
+      "image": "https://surl.li/zyjkfo",
+      "quantity": 1
+    }
+  ],
+  "users": [
+    {
+      "id": "fc2c",
+      "firstName": "Jenesius",
+      "lastName": "Arhipzev",
+      "middleName": "",
+      "phone": "+375447203011",
+      "email": "Jenesius1998@gmail.com",
+      "dob": "2009-05-01",
+      "password": "C&u&U8R5ly*H",
+      "nickname": "Oguvut"
+    }
+  ]
+}
