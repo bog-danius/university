@@ -92,6 +92,24 @@ a {
     margin-left: 18px;
 
 }
+.user-info{
+    display: flex;
+}
+.get-tickets1{
+    display: flex;
+    padding: 10px 10px;
+    align-items: center;
+    gap: 12px;
+    border-radius: 8px;
+    background: #ffffff;
+    color: #381DDB;
+    font-feature-settings: 'liga' off, 'clig' off;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    margin-left: 18px;
+}
 
 .burger-menu {
     display: none;

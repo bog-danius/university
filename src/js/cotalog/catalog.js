@@ -13,7 +13,6 @@ export default async function renderCatalog(items) {
         return;
     }
 
-
     try {
         const fragment = document.createDocumentFragment();
         await Promise.all(items.map(async (item) => {

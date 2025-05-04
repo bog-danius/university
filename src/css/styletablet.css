@@ -3,9 +3,45 @@
         gap: 36px;
     }
 
-    .nav-list {
-        gap: 10px;
+    .burger-checkbox {
+        display: none;
+    }
 
+    .burger-menu {
+        display: flex;
+        top: 38px;
+
+
+    }
+
+    .navbar {
+        display: none;
+        flex-direction: column;
+        align-items: center;
+        position: absolute;
+        top: 70px;
+        left: 0;
+        width: 101%;
+        background: rgba(0, 0, 0, 0.5);
+        padding: 20px 0;
+    }
+
+    .nav-list {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        width: 100%;
+        text-align: center;
+    }
+
+    .nav-link {
+        display: block;
+        padding: 10px;
+        color: white;
+    }
+
+    .burger-checkbox:checked ~ .navbar {
+        display: flex;
     }
 
     .countdown-time {

@@ -1,5 +1,4 @@
 import {USERS_URL} from "../api/api.js";
-
 document.getElementById("loginForm").addEventListener("submit", async function (e) {
     e.preventDefault();
 

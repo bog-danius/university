@@ -1,7 +1,12 @@
-import {USERS_URL} from "../api/api.js";
+import { USERS_URL } from "../api/api.js";
 
 document.addEventListener("DOMContentLoaded", () => {
     const form = document.getElementById("registrationForm");
+
+    if (!form) {
+        console.error("Форма регистрации не найдена!");
+        return;
+    }
 
     form.addEventListener("submit", async (e) => {
         e.preventDefault();
@@ -12,8 +17,8 @@ document.addEventListener("DOMContentLoaded", () => {
         const phone = form.querySelector('input[type="tel"]').value.trim();
         const email = form.querySelector('input[type="email"]').value.trim();
         const dob = form.querySelector('input[type="date"]').value;
-        const password = document.getElementById("password").value;
-        const nickname = document.getElementById("nickname_gen").value;
+        const password = document.getElementById("password").value.trim();
+        const nickname = document.getElementById("nickname_gen").value.trim();
 
         if (!firstName || !lastName || !email || !password || !nickname) {
             alert("Please fill in all required fields.");
@@ -28,7 +33,9 @@ document.addEventListener("DOMContentLoaded", () => {
             email,
             dob,
             password,
-            nickname
+            nickname,
+            favorites: [],
+            cart: []
         };
 
         try {
@@ -40,16 +47,19 @@ document.addEventListener("DOMContentLoaded", () => {
                 body: JSON.stringify(newUser)
             });
 
-            if (!response.ok) throw new Error("Network error");
+            if (!response.ok) {
+                throw new Error(`Ошибка сети: ${response.status}`);
+            }
 
-            alert("User successfully registered!");
-            form.reset();
-            window.location.href = "index.html";
+            const createdUser = await response.json();
+            console.log("Создан пользователь:", createdUser);
+
+            localStorage.setItem("loggedInUser", JSON.stringify(createdUser));
+
+            window.location.href = "../../index.html";
         } catch (err) {
-            console.error("Registration failed:", err);
-            alert("Failed to register user.");
+            console.error("Ошибка регистрации:", err);
+            alert("Ошибка при регистрации пользователя.");
         }
     });
 });
-
-

@@ -5,12 +5,13 @@ class ComponentHeader extends HTMLElement {
         super();
 
         const userData = JSON.parse(localStorage.getItem("loggedInUser"));
+        console.log(userData);
         const userInfoHtml = userData
             ? `<div class="user-info">
-                    <span>Welcome, ${userData.firstName} (${userData.nickname})</span>
-                    <button id="logoutBtn">Logout</button>
+                    <span class="nav-link">Welcome, ${userData.firstName} (${userData.nickname})</span>
+                    <button id="logoutBtn" class="get-tickets1">Logout</button>
                </div>`
-            : `<a href="/reg/index.html" class="login-link">Login</a>`;
+            : `<a href="/reg/index.html" class="nav-link">Login</a>`;
 
         this.innerHTML = `
             <div class="header-container">
@@ -54,13 +55,17 @@ class ComponentHeader extends HTMLElement {
 
     connectedCallback() {
         const logoutBtn = this.querySelector("#logoutBtn");
-        if (logoutBtn) {
-            logoutBtn.addEventListener("click", () => {
-                localStorage.removeItem("loggedInUser");
-                window.location.href = "../reg/index.html";
-            });
-        }
+        logoutBtn.addEventListener("click", () => {
+            const user = JSON.parse(localStorage.getItem("loggedInUser"));
+            if (user) {
+                localStorage.removeItem(`favorites_${user.id}`);
+                localStorage.removeItem(`cart_${user.id}`);
+            }
+            localStorage.removeItem("loggedInUser");
+            window.location.href = "../reg/index.html";
+        });
     }
+
 }
 
 customElements.define('widget-header', ComponentHeader);

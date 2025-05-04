@@ -532,30 +532,6 @@ a {
 }
 @media (max-width: 768px) {
     .header-container {
-        gap: 36px;
-    }
-
-    .nav-list {
-        gap: 10px;
-
-    }
-
-    .footer {
-        padding: 20px;
-    }
-
-    .footer-content-info {
-        flex-direction: column;
-        gap: 47px;
-    }
-
-    .footer-social {
-        flex-direction: column;
-        gap: 47px;
-    }
-}
-@media (max-width: 320px) {
-    .header-container {
         position: relative;
         justify-content: flex-start;
         padding-left: 20px;
@@ -602,6 +578,23 @@ a {
     .burger-checkbox:checked ~ .navbar {
         display: flex;
     }
+
+    .footer {
+        padding: 20px;
+    }
+
+    .footer-content-info {
+        flex-direction: column;
+        gap: 47px;
+    }
+
+    .footer-social {
+        flex-direction: column;
+        gap: 47px;
+    }
+}
+@media (max-width: 320px) {
+
 
     .form-input {
         max-width: 290px;

@@ -271,41 +271,6 @@
       "image": "https://surl.li/zyjkfo"
     }
   ],
-  "favorites": [
-    {
-      "id": "2",
-      "productId": "2",
-      "name": "Публикация на музыкальных блогах",
-      "category": "Медиа",
-      "price": 230,
-      "rating": 4.6,
-      "description": "Размещение вашего трека на популярных музыкальных блогах и платформах.",
-      "image": "https://surl.li/zyjkfo"
-    },
-    {
-      "id": "12",
-      "productId": "12",
-      "name": "Ведение соцсетей",
-      "category": "SMM",
-      "price": 184,
-      "rating": 4.8,
-      "description": "Полное ведение и оформление ваших социальных сетей.",
-      "image": "https://surl.li/zyjkfo"
-    }
-  ],
-  "cart": [
-    {
-      "id": "12",
-      "productId": "12",
-      "name": "Ведение соцсетей",
-      "category": "SMM",
-      "price": 184,
-      "rating": 4.8,
-      "description": "Полное ведение и оформление ваших социальных сетей.",
-      "image": "https://surl.li/zyjkfo",
-      "quantity": 1
-    }
-  ],
   "users": [
     {
       "id": "fc2c",
@@ -316,7 +281,92 @@
       "email": "Jenesius1998@gmail.com",
       "dob": "2009-05-01",
       "password": "C&u&U8R5ly*H",
-      "nickname": "Oguvut"
+      "nickname": "Oguvut",
+      "favorites": [
+        {
+          "id": "3",
+          "name": "Таргетированная реклама",
+          "category": "Реклама",
+          "price": 184,
+          "rating": 4.9,
+          "description": "Настройка и ведение рекламных кампаний для целевой аудитории",
+          "image": "https://surl.li/zyjkfo"
+        }
+      ],
+      "cart": [
+        {
+          "id": "3",
+          "name": "Таргетированная реклама",
+          "category": "Реклама",
+          "price": 184,
+          "rating": 4.9,
+          "description": "Настройка и ведение рекламных кампаний для целевой аудитории",
+          "image": "https://surl.li/zyjkfo",
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "id": "6ae5",
+      "firstName": "Fsdf",
+      "lastName": "Sdsgv",
+      "middleName": "Sdfs",
+      "phone": "+375447203020",
+      "email": "koly@gmail.com",
+      "dob": "2009-04-29",
+      "password": "diRZ&sKOW3wF",
+      "nickname": "Aqofeda",
+      "favorites": [
+        {
+          "id": "2",
+          "name": "Публикация на музыкальных блогах",
+          "category": "Медиа",
+          "price": 230,
+          "rating": 4.6,
+          "description": "Размещение вашего трека на популярных музыкальных блогах и платформах.",
+          "image": "https://surl.li/zyjkfo"
+        }
+      ],
+      "cart": []
+    },
+    {
+      "id": "2254",
+      "firstName": "Fkjbkjlb",
+      "lastName": "Djlbkjfg",
+      "middleName": "Dihoih",
+      "phone": "+375446829326",
+      "email": "jenesius2@gmail.com",
+      "dob": "2009-04-27",
+      "password": "54LpfO@VhL*i",
+      "nickname": "Emypib",
+      "favorites": [],
+      "cart": []
+    }
+  ],
+  "orders": [
+    {
+      "id": "8a75",
+      "userId": "fc2c",
+      "nickname": "Oguvut",
+      "items": [
+        {
+          "productId": "1",
+          "quantity": 2
+        }
+      ],
+      "date": "2025-05-04T19:15:45.466Z"
+    },
+    {
+      "id": "79e8",
+      "userId": "6ae5",
+      "nickname": "Aqofeda",
+      "items": [
+        {
+          "productId": "2",
+          "quantity": 4
+        }
+      ],
+      "date": "2025-05-04T19:20:03.950Z"
     }
   ]
 }

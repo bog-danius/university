@@ -2,7 +2,7 @@ export const API_URL = 'http://localhost:3000/services';
 export const FAVORITES_URL = 'http://localhost:3000/favorites';
 export const CART_URL = 'http://localhost:3000/cart';
 export const USERS_URL = 'http://localhost:3000/users';
-
+export const ORDERS_URL = 'http://localhost:3000/orders';
 
 async function checkAPI() {
     try {
