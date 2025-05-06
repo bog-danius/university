@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <title>Отзывы</title>
+  <link rel="stylesheet" href="../src/css/feedback.css">
+</head>
+<body>
+<header class="header">
+  <widget-header></widget-header>
+</header>
+<section class="main">
+  <h1>Оставить отзыв</h1>
+
+  <select id="productSelect"></select>
+
+  <textarea id="reviewText" placeholder="Ваш отзыв..."></textarea>
+  <p id="reviewError" class="input-error"></p>
+
+  <button id="submitReviewBtn">Отправить отзыв</button>
+
+  <h2>Отзывы</h2>
+  <div id="feedbackList" class="feedback-container"></div>
+</section>
+
+<footer class="footer">
+  <widget-footer></widget-footer>
+</footer>
+
+<script type="module" src="feedback-index.js"></script>
+</body>
+</html>

@@ -282,29 +282,28 @@
       "dob": "2009-05-01",
       "password": "C&u&U8R5ly*H",
       "nickname": "Oguvut",
+      "role": "user",
       "favorites": [
         {
-          "id": "3",
-          "name": "Таргетированная реклама",
-          "category": "Реклама",
-          "price": 184,
-          "rating": 4.9,
-          "description": "Настройка и ведение рекламных кампаний для целевой аудитории",
+          "id": "1",
+          "name": "Продвижение в социальных сетях",
+          "category": "SMM",
+          "price": 138,
+          "rating": 4.8,
+          "description": "Комплексное продвижение вашей музыки в Instagram, TikTok и других платформах.",
+          "image": "https://surl.li/zyjkfo"
+        },
+        {
+          "id": "2",
+          "name": "Публикация на музыкальных блогах",
+          "category": "Медиа",
+          "price": 230,
+          "rating": 4.6,
+          "description": "Размещение вашего трека на популярных музыкальных блогах и платформах.",
           "image": "https://surl.li/zyjkfo"
         }
       ],
-      "cart": [
-        {
-          "id": "3",
-          "name": "Таргетированная реклама",
-          "category": "Реклама",
-          "price": 184,
-          "rating": 4.9,
-          "description": "Настройка и ведение рекламных кампаний для целевой аудитории",
-          "image": "https://surl.li/zyjkfo",
-          "quantity": 1
-        }
-      ]
+      "cart": []
     },
     {
       "id": "6ae5",
@@ -316,6 +315,7 @@
       "dob": "2009-04-29",
       "password": "diRZ&sKOW3wF",
       "nickname": "Aqofeda",
+      "role": "user",
       "favorites": [
         {
           "id": "2",
@@ -339,6 +339,21 @@
       "dob": "2009-04-27",
       "password": "54LpfO@VhL*i",
       "nickname": "Emypib",
+      "role": "user",
+      "favorites": [],
+      "cart": []
+    },
+    {
+      "id": "admin1",
+      "firstName": "Admin",
+      "lastName": "Root",
+      "middleName": "",
+      "phone": "+375441112233",
+      "email": "admin@example.com",
+      "dob": "1990-01-01",
+      "password": "Admin@123",
+      "nickname": "RootAdmin",
+      "role": "admin",
       "favorites": [],
       "cart": []
     }
@@ -367,6 +382,59 @@
         }
       ],
       "date": "2025-05-04T19:20:03.950Z"
+    },
+    {
+      "id": "cb02",
+      "userId": "fc2c",
+      "nickname": "Oguvut",
+      "items": [
+        {
+          "productId": "3",
+          "quantity": 1
+        },
+        {
+          "productId": "1",
+          "quantity": 1
+        }
+      ],
+      "date": "2025-05-05T20:29:01.671Z"
+    },
+    {
+      "id": "4633",
+      "userId": "fc2c",
+      "nickname": "Oguvut",
+      "items": [
+        {
+          "productId": "2",
+          "quantity": 1
+        },
+        {
+          "productId": "1",
+          "quantity": 1
+        }
+      ],
+      "date": "2025-05-05T20:41:10.214Z"
+    },
+    {
+      "id": "a7df",
+      "userId": "fc2c",
+      "nickname": "Oguvut",
+      "items": [
+        {
+          "productId": "1",
+          "quantity": 1
+        }
+      ],
+      "date": "2025-05-05T20:53:15.763Z"
+    }
+  ],
+  "feedback": [
+    {
+      "id": "ba68",
+      "userId": "fc2c",
+      "productId": "1",
+      "text": "fggggggggggggggggggggg",
+      "date": "2025-05-06T15:38:59.318Z"
     }
   ]
 }

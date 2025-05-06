@@ -1,4 +1,4 @@
-import Logo from "../../img/Logo.svg"
+import Logo from "../../img/Logo.svg";
 
 class ComponentHeader extends HTMLElement {
     constructor() {
@@ -13,6 +13,10 @@ class ComponentHeader extends HTMLElement {
                </div>`
             : `<a href="/reg/index.html" class="nav-link">Login</a>`;
 
+        const adminLink = userData && userData.role === "admin"
+            ? `<li><a href="../../../admin/index.html" class="nav-link">Админ-панель</a></li>`
+            : '';
+
         this.innerHTML = `
             <div class="header-container">
                  <a href="/index.html">
@@ -26,22 +30,9 @@ class ComponentHeader extends HTMLElement {
                 </label>
                 <nav class="navbar">
                     <ol class="nav-list">
-                        <li><a href="#" class="nav-link">Home</a></li>
-                        <li>
-                            <a href="#" class="nav-link">Speakers
-                                <svg xmlns="http://www.w3.org/2000/svg" width="8" height="8" viewBox="0 0 8 8" fill="none">
-                                    <path d="..." fill="white"/>
-                                </svg>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#" class="nav-link">Schedule
-                                <svg xmlns="http://www.w3.org/2000/svg" width="8" height="8" viewBox="0 0 8 8" fill="none">
-                                    <path d="..." fill="white"/>
-                                </svg>
-                            </a>
-                        </li>
-                        <li><a href="#" class="nav-link">Contact Us</a></li>
+                        <li><a href="/" class="nav-link">Home</a></li>
+                        <li><a href="/feedback/index.html" class="nav-link">Отзывы</a></li>
+                        ${adminLink}
                         <li>
                             <button class="get-tickets"><a href="/catalog/index.html">Get Tickets</a></button>
                         </li>
@@ -50,7 +41,6 @@ class ComponentHeader extends HTMLElement {
                 </nav>
             </div>
         `;
-        this.querySelector(".logo").src = Logo;
     }
 
     connectedCallback() {

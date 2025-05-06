@@ -54,12 +54,16 @@ export default async function toggleFavorite(product) {
     const button = document.querySelector(`[data-id="${product.id}"][data-type="favorite"]`);
     if (index !== -1) {
         updatedFavorites.splice(index, 1);
-        button.classList.remove('active');
-        button.textContent = 'В избранное';
+        if (button) {
+            button.classList.remove('active');
+            button.textContent = 'В избранное';
+        }
     } else {
         updatedFavorites.push(product);
-        button.classList.add('active');
-        button.textContent = 'Убрать из избранного';
+        if (button) {
+            button.classList.add('active');
+            button.textContent = 'Убрать из избранного';
+        }
     }
 
     const updatedUser = { ...user, favorites: updatedFavorites };

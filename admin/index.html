@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <title>Админ-панель</title>
+  <link rel="stylesheet" href="../src/css/admin.css" />
+</head>
+<body>
+<header class="header">
+  <widget-header></widget-header>
+</header>
+
+<section id="adminPanel" style="display: none;">
+  <h2>Добавить / Редактировать товар</h2>
+  <input id="productName" placeholder="Название" />
+  <input id="productCategory" placeholder="Категория" />
+  <input id="productPrice" placeholder="Цена" type="number" />
+  <input id="productRating" placeholder="Рейтинг" type="number" step="0.1" min="0" max="5" />
+  <textarea id="productDescription" placeholder="Описание"></textarea>
+  <input id="productImage" placeholder="URL изображения" />
+  <button id="submitProductBtn" disabled>Сохранить</button>
+  <p id="productError" class="input-error"></p>
+
+  <h2>Список товаров</h2>
+  <div id="productList"></div>
+
+  <h2>Отзывы</h2>
+  <input id="filterUserId" placeholder="Фильтр по ID пользователя" />
+  <input id="filterProductId" placeholder="Фильтр по ID товара" />
+  <button id="filterBtn">Фильтровать</button>
+  <button onclick="loadAllReviews()">Показать все отзывы</button>
+  <div id="adminReviews"></div>
+</section>
+
+<footer class="footer">
+  <widget-footer></widget-footer>
+</footer>
+
+<script type="module" src="admin-index.js"></script>
+</body>
+</html>

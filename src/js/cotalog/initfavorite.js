@@ -113,7 +113,7 @@ function loadFavorites() {
                 </div>
                 <p class="catalog-cart__description">${item.description}</p>
                 <div class="catalog-cart__buttons">
-                    <button class="remove-favorite" data-id="${item.id}">Удалить из избранного</button>
+                    <button class="remove-favorite" data-id="${item.id}" data-type="favorite">Удалить из избранного</button>
                 </div>
             </div>
         `;
