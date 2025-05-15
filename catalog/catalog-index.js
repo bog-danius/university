@@ -1,3 +1,4 @@
+import "../src/js/preloader/preloader.js"
 import "../src/js/cotalog/pagination.js"
 import "../src/js/api/api.js"
 import "../src/js/cotalog/cart.js"

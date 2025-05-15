@@ -164,6 +164,7 @@ let cartData = [];
 
 document.addEventListener('DOMContentLoaded', async () => {
     await loadCart();
+    await updateCartBadge();
 });
 
 async function loadCart() {
@@ -272,7 +273,7 @@ async function checkout() {
         cartData = [];
         renderCart();
         alert("Заказ успешно оформлен!");
-
+        await updateCartBadge(); // ← вызов тут
     } catch (error) {
         console.error('Ошибка при оформлении заказа:', error);
         alert('Не удалось оформить заказ');
@@ -316,6 +317,7 @@ async function changeQuantity(itemId, change) {
         });
 
         loadCart();
+        await updateCartBadge(); // ← вызов тут
     } catch (error) {
         console.error('Ошибка изменения количества:', error);
     }
@@ -336,7 +338,34 @@ async function removeItem(itemId) {
         });
 
         loadCart();
+        await updateCartBadge(); // ← вызов тут
     } catch (error) {
         console.error('Ошибка удаления товара:', error);
+    }
+}
+
+export default async function updateCartBadge() {
+    const user = JSON.parse(localStorage.getItem("loggedInUser"));
+    const badge = document.getElementById('cart-count-badge');
+
+    if (!user || !badge) return;
+
+    try {
+        const response = await fetch(`${USERS_URL}/${user.id}`);
+        const userData = await response.json();
+        const cart = userData.cart || [];
+
+        const totalCount = cart.reduce((sum, item) => sum + (item.quantity || 1), 0);
+
+        if (totalCount > 0) {
+            badge.textContent = totalCount;
+            badge.style.display = 'inline-block';
+            badge.style.transform = 'scale(1.2)';
+            setTimeout(() => badge.style.transform = 'scale(1)', 150);
+        } else {
+            badge.style.display = 'none';
+        }
+    } catch (error) {
+        console.error('Ошибка при обновлении бейджа корзины:', error);
     }
 }

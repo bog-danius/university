@@ -1,0 +1,238 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>molecule</title>
+  <script type="module" src="callery.js" defer></script>
+</head>
+<style>
+
+  :root {
+    --page-bg: #222;
+    --text-color: #fff;
+    --image-width: 400px;
+    --transition-speed: 0.5s;
+  }
+
+body{
+  margin: 0;
+  padding: 0;
+}
+  .page {
+    background: var(--page-bg);
+    color: var(--text-color);
+    font-family: sans-serif;
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+
+  .gallery {
+    text-align: center;
+    margin: 0 100px 0 0;
+  }
+
+  .gallery__image {
+    width: var(--image-width);
+    height: auto;
+    border-radius: 10px;
+    opacity: 1;
+    transition: opacity var(--transition-speed) ease-in-out;
+  }
+
+  .gallery__image--fade-out {
+    opacity: 0;
+  }
+
+  .gallery__controls {
+    margin-top: 20px;
+  }
+
+  .controls__button {
+    margin: 0 10px;
+    padding: 10px 20px;
+    font-size: 16px;
+  }
+
+  .controls__status {
+    margin-top: 10px;
+    font-size: 18px;
+  }
+
+  .controls__volume {
+    margin-top: 10px;
+    width: 200px;
+  }
+
+  .page {
+    background: var(--page-bg);
+    color: var(--text-color);
+    font-family: sans-serif;
+    margin: 0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .parallax-section {
+    position: relative;
+    height: 150vh;
+    margin: -90px 0;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    text-align: center;
+    z-index: 1;
+  }
+
+  .parallax-layer {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    will-change: transform;
+  }
+
+  .parallax-back {
+    background: url('https://images.unsplash.com/photo-1470225620780-dba8ba36b745?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80') center/cover;
+    z-index: 1;
+    transform: translateZ(-2px) scale(3);
+  }
+
+  .parallax-middle {
+    background: url('https://images.unsplash.com/photo-1501612780327-45045538702b?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80') center/cover;
+    z-index: 2;
+    transform: translateZ(-1px) scale(2);
+    mix-blend-mode: lighten;
+    opacity: 0.5;
+  }
+
+  .parallax-front {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 3;
+    transform: translateZ(0);
+  }
+
+  .parallax-content {
+    max-width: 800px;
+    padding: 20px;
+    background: rgba(0,0,0,0.7);
+    border-radius: 10px;
+  }
+
+  .parallax-title {
+    font-size: 3rem;
+    margin-bottom: 20px;
+  }
+
+  .parallax-text {
+    font-size: 1.2rem;
+    line-height: 1.6;
+  }
+
+  .reverse-element {
+    position: absolute;
+    right: 10%;
+    top: 30%;
+    width: 150px;
+    height: 150px;
+    background: url('https://images.unsplash.com/photo-1514525253161-7a46d19cd819?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80') center/cover;
+    border-radius: 50%;
+    z-index: 4;
+    transform: translateZ(1px);
+    box-shadow: 0 0 20px rgba(255,255,255,0.3);
+  }
+
+  @media (max-width: 768px) {
+    .parallax-title {
+      font-size: 2rem;
+    }
+
+    .parallax-text {
+      font-size: 1rem;
+    }
+
+    .reverse-element {
+      width: 100px;
+      height: 100px;
+    }
+  }
+</style>
+<body>
+<header class="header">
+  <widget-header></widget-header>
+</header>
+
+<div class="page">
+  <div class="gallery">
+    <img class="gallery__image gallery__image--visible" id="mainImage" src="" alt="Галерея" />
+
+    <div class="gallery__controls controls">
+      <button class="controls__button" id="btn1">Элемент 1</button>
+      <button class="controls__button" id="btn2">Элемент 2</button>
+
+      <div class="controls__status" id="playerStatus">⏸ Пауза</div>
+
+      <input class="controls__volume" type="range" id="volumeControl" min="0" max="1" step="0.01" value ="0.5" />
+    </div>
+  </div>
+  <iframe src="https://yandex.ru/map-widget/v1/?um=constructor%3A4d9712cf2e560d6e579ea25da6afc519ba4e88a9ebc4cac1f0e72ae4dbbaad81&amp;source=constructor" width="500" height="400" frameborder="0"></iframe>
+</div>
+<section class="parallax-section">
+  <div class="parallax-layer parallax-back"></div>
+  <div class="parallax-layer parallax-middle"></div>
+  <div class="parallax-layer parallax-front">
+    <div class="parallax-content">
+      <h2 class="parallax-title">Погрузитесь в мир музыки</h2>
+      <p class="parallax-text">Наши мероприятия создают неповторимую атмосферу, где каждый найдет что-то для себя. Откройте для себя новые горизонты звука и визуальных эффектов.</p>
+    </div>
+  </div>
+  <div class="reverse-element"></div>
+</section>
+<footer class="footer">
+  <widget-footer></widget-footer>
+</footer>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  const parallaxSection = document.querySelector('.parallax-section');
+  const layers = document.querySelectorAll('.parallax-layer');
+  const reverseElement = document.querySelector('.reverse-element');
+
+  const layerSpeeds = {
+    'parallax-back': 0.1,
+    'parallax-middle': 0.5,
+    'parallax-front': 0.7
+  };
+
+  window.addEventListener('scroll', function() {
+    const scrollPosition = window.pageYOffset;
+    const sectionOffset = parallaxSection.offsetTop;
+    const sectionHeight = parallaxSection.offsetHeight;
+
+    if (scrollPosition > sectionOffset - window.innerHeight &&
+            scrollPosition < sectionOffset + sectionHeight) {
+
+      const offset = scrollPosition - sectionOffset;
+
+      layers.forEach(layer => {
+        const speed = layerSpeeds[layer.classList[1]] || 0;
+        const yPos = -(offset * speed);
+        layer.style.transform = `translate3d(0, ${yPos}px, 0)`;
+      });
+
+      reverseElement.style.transform = `translate3d(0, ${offset * 0.2}px, 0)`;
+    }
+  });
+
+  window.dispatchEvent(new Event('scroll'));
+});</script>
+</body>
+</html>

@@ -1,47 +1,60 @@
 @media (max-width: 768px) {
     .header-container {
-        gap: 36px;
-    }
-
-    .burger-checkbox {
-        display: none;
+        justify-content: space-between;
+        padding: 20px;
+        gap: 20px;
     }
 
     .burger-menu {
         display: flex;
-        top: 38px;
-
-
     }
 
     .navbar {
-        display: none;
+        position: fixed;
+        top: 0;
+        right: 0;
+        width: 250px;
+        height: 100vh;
+        background: rgba(0, 0, 0, 0.9);
         flex-direction: column;
-        align-items: center;
-        position: absolute;
-        top: 70px;
-        left: 0;
-        width: 101%;
-        background: rgba(0, 0, 0, 0.5);
-        padding: 20px 0;
+        justify-content: flex-start;
+        padding-top: 80px;
+        transform: translateX(100%);
+        opacity: 0;
+        z-index: 99;
+        display: none;
+        transition: all 0.3s ease;
     }
 
     .nav-list {
-        display: flex;
         flex-direction: column;
-        gap: 15px;
+        gap: 25px;
+        align-items: flex-start;
+        padding: 0 30px;
         width: 100%;
-        text-align: center;
     }
 
     .nav-link {
-        display: block;
-        padding: 10px;
-        color: white;
+        font-size: 16px;
+        width: 100%;
+        padding: 10px 0;
     }
 
-    .burger-checkbox:checked ~ .navbar {
-        display: flex;
+    .get-tickets {
+        margin-left: 0;
+        width: 100%;
+        justify-content: center;
+    }
+
+    .user-info {
+        flex-direction: column;
+        align-items: flex-start;
+        width: 100%;
+    }
+
+    .get-tickets1 {
+        width: 100%;
+        justify-content: center;
     }
 
     .countdown-time {

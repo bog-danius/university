@@ -6,6 +6,10 @@
     <link rel="stylesheet" href="../src/css/cotalog-style.css">
 </head>
 <body>
+<div id="preloader">
+    <div class="loader"></div>
+</div>
+
 <header class="header">
     <widget-header></widget-header>
 </header>
@@ -13,7 +17,10 @@
     <div class="main-container">
 
         <div class="navigation-buttons">
-            <button id="btnCatalog" class="nav-btn active"><a href="../cart/index.html">Карзина</a></button>
+            <button id="btnCatalog" class="nav-btn" style="position: relative;">
+                <a href="../cart/index.html">Корзина</a>
+                <span id="cart-count-badge" class="cart-badge" style="display: none;">0</span>
+            </button>
             <button id="btnFavorites" class="nav-btn"><a href="favorite/index.html">Избранное</a></button>
         </div>
         <p class="main-container-text">Каталог</p>

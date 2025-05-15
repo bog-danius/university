@@ -9,7 +9,11 @@
     <link rel="stylesheet" href="src/css/stylemobile.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap" rel="stylesheet">
-
+    <link
+            rel="stylesheet"
+            href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
+    <link rel="icon" href="./src/img/icons.pdf.ico" type="image/x-icon">
 </head>
 <body>
 
@@ -27,7 +31,7 @@
             eleifend ex non, vehicula libero. Suspendisse eget tellus lectus.</p>
         <div class="hero-buttons">
             <button class="btn-primary">Get Started</button>
-            <button class="btn-secondary">
+            <button class="btn-secondary" onclick="window.open('https://www.youtube.com/watch?v=dQw4w9WgXcQ', '_blank')">
                 <svg xmlns="http://www.w3.org/2000/svg" width="56" height="56" viewBox="0 0 56 56" fill="none">
                     <g clip-path="url(#clip0_893_173)">
                         <path d="M28.0001 51.3333C15.1131 51.3333 4.66675 40.887 4.66675 28C4.66675 15.113 15.1131 4.66663 28.0001 4.66663C40.8871 4.66663 51.3334 15.113 51.3334 28C51.3334 40.887 40.8871 51.3333 28.0001 51.3333ZM28.0001 46.6666C32.9508 46.6666 37.6987 44.7 41.1994 41.1993C44.7001 37.6986 46.6668 32.9507 46.6668 28C46.6668 23.0493 44.7001 18.3013 41.1994 14.8006C37.6987 11.3 32.9508 9.33329 28.0001 9.33329C23.0494 9.33329 18.3014 11.3 14.8008 14.8006C11.3001 18.3013 9.33342 23.0493 9.33342 28C9.33342 32.9507 11.3001 37.6986 14.8008 41.1993C18.3014 44.7 23.0494 46.6666 28.0001 46.6666ZM24.7847 19.635L36.1691 27.223C36.2971 27.3082 36.4021 27.4237 36.4747 27.5592C36.5473 27.6948 36.5853 27.8462 36.5853 28C36.5853 28.1537 36.5473 28.3051 36.4747 28.4407C36.4021 28.5763 36.2971 28.6918 36.1691 28.777L24.7824 36.365C24.642 36.458 24.479 36.5114 24.3108 36.5193C24.1425 36.5273 23.9753 36.4895 23.8267 36.4101C23.6782 36.3307 23.5539 36.2126 23.467 36.0682C23.3802 35.9239 23.334 35.7587 23.3334 35.5903V20.4096C23.3337 20.2408 23.3798 20.0752 23.4668 19.9305C23.5538 19.7859 23.6783 19.6675 23.8273 19.588C23.9762 19.5085 24.1439 19.4709 24.3125 19.4791C24.4811 19.4874 24.6443 19.5413 24.7847 19.635Z"
@@ -413,82 +417,61 @@
         <div class="best-shots-content">
             <p class="best-shots-title">See our Best Shots</p>
         </div>
-        <div class="best-shots-slider">
-            <button class="btn-best-shots1">
-                <svg xmlns="http://www.w3.org/2000/svg" width="34" height="34" viewBox="0 0 34 34" fill="none">
-                    <g clip-path="url(#clip0_893_468)">
-                        <path d="M18.4862 17.1553L11.5562 10.2253L13.5358 8.24574L22.4454 17.1553L13.5358 26.0649L11.5562 24.0853L18.4862 17.1553Z"
-                              fill="#222222"/>
-                    </g>
-                    <defs>
-                        <clipPath id="clip0_893_468">
-                            <rect width="33.6" height="33.6" fill="white" transform="translate(0.200195 0.200195)"/>
-                        </clipPath>
-                    </defs>
-                </svg>
-            </button>
-            <button class="btn-best-shots2">
-
-                <svg xmlns="http://www.w3.org/2000/svg" width="34" height="34" viewBox="0 0 34 34" fill="none">
-                    <g clip-path="url(#clip0_893_471)">
-                        <path d="M15.5148 17.1557L22.4448 24.0857L20.4652 26.0653L11.5556 17.1557L20.4652 8.24609L22.4448 10.2257L15.5148 17.1557Z"
-                              fill="#222222"/>
-                    </g>
-                    <defs>
-                        <clipPath id="clip0_893_471">
-                            <rect width="33.6" height="33.6" fill="white" transform="translate(0.199951 0.200195)"/>
-                        </clipPath>
-                    </defs>
-                </svg>
-            </button>
-        </div>
-        <div class="best-shots-gallery">
-            <widget-bestshots
-                    img="/src/img/bestshots-img1.png"
-                    logo="Lorem Ipsum Amet"
-                    like="412"
-                    comment="140"
-                    opacity="0.3"
-                    hashtag="#music #concert #conference #london #event #artist #dj #soundtrack #dance"
-            >
-            </widget-bestshots>
-            <widget-bestshots
-                    img="/src/img/bestshots-img2.png"
-                    logo="Lorem Ipsum Amet"
-                    like="412"
-                    comment="140"
-                    opacity="1"
-                    hashtag="#music #concert #conference #london #event #artist #dj #soundtrack #dance"
-            >
-            </widget-bestshots>
-            <widget-bestshots
-                    img="/src/img/bestshots-img3.png"
-                    logo="Lorem Ipsum Amet"
-                    like="412"
-                    comment="140"
-                    opacity="1"
-                    hashtag="#music #concert #conference #london #event #artist #dj #soundtrack #dance"
-            >
-            </widget-bestshots>
-            <widget-bestshots
-                    img="/src/img/bestshots-img4.png"
-                    logo="Lorem Ipsum Amet"
-                    like="412"
-                    comment="140"
-                    opacity="1"
-                    hashtag="#music #concert #conference #london #event #artist #dj #soundtrack #dance"
-            >
-            </widget-bestshots>
-            <widget-bestshots
-                    img="/src/img/bestshots-img5.png"
-                    logo="Lorem Ipsum Amet"
-                    like="412"
-                    comment="140"
-                    opacity="0.3"
-                    hashtag="#music #concert #conference #london #event #artist #dj #soundtrack #dance"
-            >
-            </widget-bestshots>
-
+        <div class="swiper best-shots-slider">
+            <div class="swiper-wrapper best-shots-gallery">
+                <div class="swiper-slide">
+                    <widget-bestshots
+                            img="/src/img/bestshots-img1.png"
+                            logo="Lorem Ipsum Amet"
+                            like="412"
+                            comment="140"
+                            opacity="1"
+                            hashtag="#music #concert #conference #london #event #artist #dj #soundtrack #dance"
+                    ></widget-bestshots>
+                </div>
+                <div class="swiper-slide">
+                    <widget-bestshots
+                            img="/src/img/bestshots-img2.png"
+                            logo="Lorem Ipsum Amet"
+                            like="412"
+                            comment="140"
+                            opacity="1"
+                            hashtag="#music #concert #conference #london #event #artist #dj #soundtrack #dance"
+                    ></widget-bestshots>
+                </div>
+                <div class="swiper-slide">
+                    <widget-bestshots
+                            img="/src/img/bestshots-img3.png"
+                            logo="Lorem Ipsum Amet"
+                            like="412"
+                            comment="140"
+                            opacity="1"
+                            hashtag="#music #concert #conference #london #event #artist #dj #soundtrack #dance"
+                    ></widget-bestshots>
+                </div>
+                <div class="swiper-slide">
+                    <widget-bestshots
+                            img="/src/img/bestshots-img4.png"
+                            logo="Lorem Ipsum Amet"
+                            like="412"
+                            comment="140"
+                            opacity="1"
+                            hashtag="#music #concert #conference #london #event #artist #dj #soundtrack #dance"
+                    ></widget-bestshots>
+                </div>
+                <div class="swiper-slide">
+                    <widget-bestshots
+                            img="/src/img/bestshots-img5.png"
+                            logo="Lorem Ipsum Amet"
+                            like="412"
+                            comment="140"
+                            opacity="1"
+                            hashtag="#music #concert #conference #london #event #artist #dj #soundtrack #dance"
+                    ></widget-bestshots>
+                </div>
+            </div>
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
         </div>
     </section>
 
@@ -564,6 +547,16 @@
 <footer class="footer">
     <widget-footer></widget-footer>
 </footer>
+
+<div class="scroll-to-top">
+    <button onclick="window.scrollTo({top: 0, behavior: 'smooth'})">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+            <path d="M12 4L4 12M4 12L12 20M4 12H20" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+    </button>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 <script>
     /*setInterval(() => {
         fetch(location.href)
@@ -575,6 +568,66 @@
             });
     }, 5000);*/
 
+    window.addEventListener('scroll', function() {
+        const scrollToTopBtn = document.querySelector('.scroll-to-top');
+        if (window.pageYOffset > 300) {
+            scrollToTopBtn.classList.add('visible');
+        } else {
+            scrollToTopBtn.classList.remove('visible');
+        }
+    });
+
+    const swiper = new Swiper('.best-shots-slider', {
+        loop: true,
+        spaceBetween: 20,
+        slidesPerView: 4,
+        autoplay: {
+            delay: 3000,
+            disableOnInteraction: false,
+        },
+        navigation: { // Кнопки навигации
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+        },
+        breakpoints: {
+            0: { slidesPerView: 1 },
+            640: { slidesPerView: 2 },
+            1024: { slidesPerView: 3 },
+            1280: { slidesPerView: 4 }
+        },
+        speed: 800,
+        effect: 'slide',
+        keyboard: { enabled: true },
+        mousewheel: { forceToAxis: true },
+    });
+
+    document.addEventListener("DOMContentLoaded", () => {
+        const bestShotsSection = document.querySelector('.best-shots');
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    swiper.autoplay.start();
+                } else {
+                    swiper.autoplay.stop();
+                }
+            });
+        }, { threshold: 0.1 });
+
+        observer.observe(bestShotsSection);
+
+        const sliderContainer = document.querySelector('.best-shots-slider');
+        sliderContainer.addEventListener('mouseenter', () => swiper.autoplay.stop());
+        sliderContainer.addEventListener('mouseleave', () => swiper.autoplay.start());
+
+        sliderContainer.addEventListener('touchstart', () => swiper.autoplay.stop(), {passive: true});
+        sliderContainer.addEventListener('touchend', () => swiper.autoplay.start(), {passive: true});
+    });
+
+    document.querySelectorAll('.swiper-slide').forEach(slide => {
+        slide.addEventListener('click', () => swiper.slideNext());
+    });
     const tabs = document.querySelectorAll('.tab');
 
     function switchTab(event) {

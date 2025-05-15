@@ -37,6 +37,7 @@ import {currentPage, currentFilter} from './pagination.js';
 //         console.error('Error toggling cart:', error);
 //     }
 // }
+import updateCartBadge from './initcart.js';
 export default async function toggleCart(product) {
     try {
         const user = JSON.parse(localStorage.getItem("loggedInUser"));
@@ -65,6 +66,7 @@ export default async function toggleCart(product) {
         });
 
         loadProducts(currentPage, currentFilter);
+        await updateCartBadge(); // ← вызов тут
     } catch (error) {
         console.error('Ошибка при обновлении корзины:', error);
     }

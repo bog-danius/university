@@ -303,7 +303,38 @@
           "image": "https://surl.li/zyjkfo"
         }
       ],
-      "cart": []
+      "cart": [
+        {
+          "id": "1",
+          "name": "Продвижение в социальных сетях",
+          "category": "SMM",
+          "price": 138,
+          "rating": 4.8,
+          "description": "Комплексное продвижение вашей музыки в Instagram, TikTok и других платформах.",
+          "image": "https://surl.li/zyjkfo",
+          "quantity": 1
+        },
+        {
+          "id": "2",
+          "name": "Публикация на музыкальных блогах",
+          "category": "Медиа",
+          "price": 230,
+          "rating": 4.6,
+          "description": "Размещение вашего трека на популярных музыкальных блогах и платформах.",
+          "image": "https://surl.li/zyjkfo",
+          "quantity": 1
+        },
+        {
+          "id": "3",
+          "name": "Таргетированная реклама",
+          "category": "Реклама",
+          "price": 184,
+          "rating": 4.9,
+          "description": "Настройка и ведение рекламных кампаний для целевой аудитории",
+          "image": "https://surl.li/zyjkfo",
+          "quantity": 1
+        }
+      ]
     },
     {
       "id": "6ae5",
@@ -354,8 +385,48 @@
       "password": "Admin@123",
       "nickname": "RootAdmin",
       "role": "admin",
-      "favorites": [],
-      "cart": []
+      "favorites": [
+        {
+          "id": "1",
+          "name": "Продвижение в социальных сетях",
+          "category": "SMM",
+          "price": 138,
+          "rating": 4.8,
+          "description": "Комплексное продвижение вашей музыки в Instagram, TikTok и других платформах.",
+          "image": "https://surl.li/zyjkfo"
+        },
+        {
+          "id": "2",
+          "name": "Публикация на музыкальных блогах",
+          "category": "Медиа",
+          "price": 230,
+          "rating": 4.6,
+          "description": "Размещение вашего трека на популярных музыкальных блогах и платформах.",
+          "image": "https://surl.li/zyjkfo"
+        }
+      ],
+      "cart": [
+        {
+          "id": "1",
+          "name": "Продвижение в социальных сетях",
+          "category": "SMM",
+          "price": 138,
+          "rating": 4.8,
+          "description": "Комплексное продвижение вашей музыки в Instagram, TikTok и других платформах.",
+          "image": "https://surl.li/zyjkfo",
+          "quantity": 1
+        },
+        {
+          "id": "2",
+          "name": "Публикация на музыкальных блогах",
+          "category": "Медиа",
+          "price": 230,
+          "rating": 4.6,
+          "description": "Размещение вашего трека на популярных музыкальных блогах и платформах.",
+          "image": "https://surl.li/zyjkfo",
+          "quantity": 1
+        }
+      ]
     }
   ],
   "orders": [
